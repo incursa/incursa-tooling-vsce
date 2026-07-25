@@ -29,11 +29,11 @@ Evidence links are repository-relative until a public URL or release artifact ex
 | 2. CSV semantic comparison | Complete; release pending | Commit `06799a7`; 37 Node tests, 25 existing checks, 8 parity fixtures, real web-host test, and protected exact-package publication; PR `incursa/csv-contract-vsce#2` |
 | 3. SpecTrace and Workbench | Complete with host limitation; release pending | Commit `1027fc3`; 33 web-host tests, optional desktop contract, and a real traceability-tree screenshot; ARM64 helper could not execute on this host; PR `incursa/spec-trace-vsce#2` |
 | 4. Database Knowledge Workbench | Complete; release pending | Commit `799e1d1`; 17 security/parity tests, unbiased CSP nonces, dual bundles, extension-host/visual QA, and protected exact-package publication; PR `incursa/database-knowledge-vsce#1` |
-| 5. Auditable Reports | Complete; release pending | Extension commit `f064f49`; sibling renderer adapter commit `ee94996`; installed-host regression, desktop/mobile portable verification, paginated HTML, and PDF pass |
-| 6. Standalone Windows tools | Repo Manager complete; Crystal/PDF blockers recorded | Repo Manager commit `4a76d63`, verified portable ZIP, and draft PR `incursa/repomanager#1`; Crystal commit `dfe87cf` and verified safe-parts ZIP |
+| 5. Auditable Reports | Complete; release pending | Extension commit `f064f49`; public bundle repo `3f986ff` with renderer fix `ee94996`; installed-host regression, desktop/mobile verification, paginated HTML, and PDF pass |
+| 6. Standalone Windows tools | Repo Manager and Crystal complete; PDF UI pending | Repo Manager draft PR `#1`; sanitized public Crystal source `df896b6`; public PDF wrapper/package source `b3bb32e` with UI still outstanding |
 | 7. Incursa Tooling pack | Complete; release pending | Verified metadata-only 17-entry VSIX; portfolio release-policy verifier covers all five extensions; draft PR `incursa/incursa-tooling-vsce#1` |
 | 8. Unified installer | Seven-component offline portfolio complete; companion blockers recorded | Lifecycle-tested revision 4 with Repo Manager and generic-only Database Tools; exact pins/checksum in installer docs and draft PR `incursa/incursa-tooling-installer#1` |
-| 9. Release handoff | Ready with limitations | Nine draft PRs, five VSIXes, unified installer, Database Tools installer, Repo Manager ZIP, Crystal ZIP, Figma reference, and exact remaining external gates recorded |
+| 9. Release handoff | Ready with limitations | Nine draft PRs plus three public companion repositories, five VSIXes, unified installer, Database Tools installer, Repo Manager ZIP, Crystal ZIP, Figma reference, and exact remaining external gates recorded |
 
 ## Milestone evidence log
 
@@ -136,9 +136,14 @@ Evidence links are repository-relative until a public URL or release artifact ex
 - Crystal Report Inspector `1.3.0` commit `dfe87cf` passes 14 tests, hostile-XML rejection, local HTML inspection, bounded comparison, and safe-package smoke.
 - Crystal safe-parts ZIP: `rpt-to-xml-modern/artifacts/CrystalReportInspector-1.3.0.zip`; `1,750,088` bytes; SHA-256 `edb34395e356a033b510a2c17845599e7c4b700c05d4854b67c93f3db23ea33b`.
 - The safe package intentionally excludes SAP assemblies. XML inspection works; `doctor` accurately reports x86 RPT extraction unavailable because the licensed runtime is absent.
-- Crystal cannot be pushed or released because `rpt-to-xml-modern` has no Git remote.
+- Crystal source is public at `incursa/rpt-to-xml-modern` commit `df896b6`. Its
+  public history excludes all 44 compiled vendor `.rpt` samples and generated
+  release artifacts while retaining Apache-2.0 licensing and the inherited MIT notice.
 - Repo Manager was implemented in the clean linked worktree `repomanager-portfolio`; the original worktree's 56 tracked vendor-asset deletions remain untouched.
-- PDF wrapper tests pass (15 tests), but `pdfxchange-tools-dotnet` is an entirely uncommitted initial worktree with no remote and no standalone UI/package baseline. It was left untouched.
+- PDF wrapper source is public at `incursa/pdfxchange-tools-dotnet` commit
+  `b3bb32e`. Build, 15 tests, 126-requirement validation, NuGet packaging CI,
+  CodeQL, and the licensed-product boundary pass. The polished standalone UI
+  remains unfinished.
 
 ### 2026-07-25 — renderer repair and Database Tools publication
 
@@ -146,6 +151,12 @@ Evidence links are repository-relative until a public URL or release artifact ex
 - `incursa/database-tools#2` is a draft PR at `e242dd5`. Visual Studio/MSBuild Release build and VSIX packaging pass; 345 .NET tests pass. The VSIX SHA-256 is `D5C8C117FCAFD057D87E2C6D22B6B48B8ACD7D313D9579842877C32D2FFB7027`.
 - `incursa/database-tools-content#1` is a draft PR at `6f89ca4`. Validation covers 33 generic SQL Server and 81 Vista queries; 51 tests, deterministic generic builds, and generic packaging pass. The generic ZIP SHA-256 is `26126712C62F52ED31094E7EE9BC780D12B377F61908A310F41B346C7717EE08`.
 - Targeted scans of both public diffs found no credentials, client/overlay/private paths, observed knowledge bundles, connection strings, user-profile paths, or named-client material.
+
+### 2026-07-25 — public companion repositories
+
+- `incursa/auditable-reports` is public and Apache-2.0 at `3f986ff`. The complete local browser/PDF gate passes, and GitHub CI plus CodeQL are green.
+- `incursa/rpt-to-xml-modern` is public and Apache-2.0 at sanitized commit `df896b6`. The public tree contains zero `.rpt` samples and zero generated artifacts, preserves the original MIT attribution, and passes 14 tests plus XML inspection/comparison verification.
+- `incursa/pdfxchange-tools-dotnet` is public and Apache-2.0 at `b3bb32e`. It contains no PDF-XChange binaries, manuals, saved settings, OCR engines, or license keys; CI and CodeQL are green.
 
 ## Required evidence for each product milestone
 
