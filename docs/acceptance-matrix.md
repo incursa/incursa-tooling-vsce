@@ -14,9 +14,9 @@ Canonical requirements live in `specs/requirements/incursa-tooling/SPEC-PORTFOLI
 | CSV-SEM-003 | Normalization is opt-in and preserves raw identifiers/leading zeroes | Normalization/identifier fixtures at `06799a7` | Complete |
 | CSV-DESK-001 | Desktop large-file comparison streams and checks uniqueness exactly with spill-to-disk | 128-partition exact spill implementation and tests at `06799a7` | Complete |
 | STR-WB-001 | Workbench integration is optional, trust-gated, structured, cancellable, timed, and bounded | Contract tests at `1027fc3`; ARM64 helper unavailable on host | Complete with host limitation |
-| DBK-001 | Database Knowledge Workbench verifies manifest, containment, byte counts, sizes, and SHA-256 | Sanitized/security tests at `f4d3bf1` | Complete |
-| DBK-002 | Database Knowledge Workbench streams/indexes/searches and inspects supported knowledge layers | Unit, extension-host, and visual/interaction QA at `f4d3bf1` | Complete |
-| DBK-003 | Candidate edits do not mutate verified bundles and no private overlay ships | Mutation tests and 17-entry package inspection at `f4d3bf1` | Complete |
+| DBK-001 | Database Knowledge Workbench verifies manifest, containment, byte counts, sizes, and SHA-256 | Sanitized/security tests at `799e1d1` | Complete |
+| DBK-002 | Database Knowledge Workbench streams/indexes/searches and inspects supported knowledge layers | Unit, extension-host, and visual/interaction QA at `799e1d1` | Complete |
+| DBK-003 | Candidate edits do not mutate verified bundles and no private overlay ships | Mutation tests, unbiased CSP nonce tests, and 17-entry package inspection at `799e1d1` | Complete |
 | RPT-001 | Installed Auditable Reports VSIX resolves the bundled compiler on Windows | Real Windows extension-host preview plus path regression at `f064f49` | Complete |
 | RPT-002 | Canonical `artifact.json`, paginated HTML, and PDF validation remain aligned | Compiler/Paged.js/PDF checks pass, but the final sibling gate hits portable-renderer overflow/startup failures | Partial; renderer blocker |
 | RPT-003 | Ordinary bundle commands forward print settings and replace outputs atomically | Implementation is present; full gate is blocked at the earlier portable-render stage | Partial; renderer blocker |
