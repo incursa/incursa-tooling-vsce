@@ -29,11 +29,11 @@ Evidence links are repository-relative until a public URL or release artifact ex
 | 2. CSV semantic comparison | Complete; release pending | Commit `06799a7`; 37 Node tests, 25 existing checks, 8 parity fixtures, real web-host test, and protected exact-package publication; PR `incursa/csv-contract-vsce#2` |
 | 3. SpecTrace and Workbench | Complete with host limitation; release pending | Commit `1027fc3`; 33 web-host tests, optional desktop contract, and a real traceability-tree screenshot; ARM64 helper could not execute on this host; PR `incursa/spec-trace-vsce#2` |
 | 4. Database Knowledge Workbench | Complete; release pending | Commit `799e1d1`; 17 security/parity tests, unbiased CSP nonces, dual bundles, extension-host/visual QA, and protected exact-package publication; PR `incursa/database-knowledge-vsce#1` |
-| 5. Auditable Reports | Extension complete; final-bundle renderer blocked | Commit `f064f49`; installed-host regression, verified VSIX, and exact-package publication; sibling portable-renderer failure recorded below |
+| 5. Auditable Reports | Complete; release pending | Extension commit `f064f49`; sibling renderer adapter commit `ee94996`; installed-host regression, desktop/mobile portable verification, paginated HTML, and PDF pass |
 | 6. Standalone Windows tools | Repo Manager complete; Crystal/PDF blockers recorded | Repo Manager commit `4a76d63`, verified portable ZIP, and draft PR `incursa/repomanager#1`; Crystal commit `dfe87cf` and verified safe-parts ZIP |
 | 7. Incursa Tooling pack | Complete; release pending | Verified metadata-only 17-entry VSIX; portfolio release-policy verifier covers all five extensions; draft PR `incursa/incursa-tooling-vsce#1` |
 | 8. Unified installer | Seven-component offline portfolio complete; companion blockers recorded | Lifecycle-tested revision 4 with Repo Manager and generic-only Database Tools; exact pins/checksum in installer docs and draft PR `incursa/incursa-tooling-installer#1` |
-| 9. Release handoff | Ready with limitations | Seven draft PRs, five VSIXes, unified installer, Database Tools installer, Repo Manager ZIP, Crystal ZIP, Figma reference, and exact remaining external gates recorded |
+| 9. Release handoff | Ready with limitations | Nine draft PRs, five VSIXes, unified installer, Database Tools installer, Repo Manager ZIP, Crystal ZIP, Figma reference, and exact remaining external gates recorded |
 
 ## Milestone evidence log
 
@@ -84,8 +84,8 @@ Evidence links are repository-relative until a public URL or release artifact ex
 - SpecTrace now ships a real 1,600×1,200 VS Code web-host screenshot of the traceability tree and requirements workspace; its Chrome smoke path also verifies deterministic command-palette and tree navigation.
 - Database Knowledge visual and interaction QA passed at desktop and narrow widths; its public VSIX contains no private overlays or snapshots. A high-severity CodeQL finding in CSP nonce generation was fixed with unbiased rejection sampling and boundary tests.
 - `scripts/Test-PortfolioReleasePolicy.ps1` verifies that all five Marketplace workflows use the protected `marketplace` environment, fail clearly without `VSCE_PAT`, and publish the already inspected VSIX through `--packagePath`.
-- Auditable Reports executed its bundled compiler from a real Windows extension host and retained canonical evidence in a chartless, source-hidden decision brief. The sibling final-report gate separately exposed a current Data Analytics portable-renderer regression: intermittent reader startup timeout and a 1440px horizontal-overflow failure. Compiler, Chart.js, Paged.js, paginated HTML, and PDF checks before that stage passed; no validation was disabled.
-- A fresh full sibling gate on 2026-07-24 reproduced the external renderer failure as `reader_timeout` while its state remained `fallback`; the sibling repository remained clean.
+- Auditable Reports executed its bundled compiler from a real Windows extension host and retained canonical evidence in a chartless, source-hidden decision brief.
+- The sibling bundle repository now adapts the shared Data Analytics delivery boundary without forking its runtime. It corrects scrollbar-inclusive top-bar sizing at desktop and mobile widths and uses explicit browser startup budgets. The full gate passes for chart-bearing and chartless reports, source-dialog interaction, Chart.js, Paged.js, paginated HTML, and PDF at local commit `ee94996`.
 
 ### 2026-07-24 — Incursa Tooling Setup foundation
 
@@ -126,7 +126,8 @@ Evidence links are repository-relative until a public URL or release artifact ex
 - A clean linked Database Tools worktree at commit `8d5fdaffcde106b82cfa8a709adafc9fee17f27b` produced the generic-only `0.13.2` installer from content checkpoint `6f89ca49ae94dc134f27c0fbb586477f7e38230a`.
 - Database Tools installer: `database-tools-portfolio/artifacts/Incursa.DatabaseTools-Setup-0.13.2-6f89ca4-r2.exe`; `4,424,480` bytes; SHA-256 `5AF1618534D6A5C36ADE0CF7CE68EE5E5EC47F60A7213E03FD5764FB3BA13E91`.
 - Package evidence confirms 154 manifested files, zero bundled knowledge sources, no private content, and no customer overlay. Silent install without SSMS, Unicode/space path handling, and ordinary uninstall with a preserved user workspace sentinel passed.
-- The source commit is a clean local build point atop pre-existing local work and is deliberately not represented as a remote release. The portfolio did not publish those unrelated pre-existing commits.
+- The Database Tools source line is now published for review on draft PR `incursa/database-tools#2` at `e242dd5`; the installer remains pinned to the tested source commit `8d5fdaf`.
+- The generic content checkpoint is published for review on draft PR `incursa/database-tools-content#1` at `6f89ca4`. No tag, release, live SQL execution, observed bundle, or customer overlay was published.
 - Installer revision 4 pins and stages the verified Database Tools setup alongside the five VSIX packages and Repo Manager. Its capability report explicitly treats missing SSMS 22 as nonfatal; interactive setup alone may launch the nested installer.
 - Installer lifecycle: r3→r4 upgrade, seven-component full install, exact nested-installer hash verification, missing-SSMS capability reporting, Repo Manager no-Codex doctor, locked executable recovery, and uninstall/sentinel preservation all passed. Exact setup bytes and checksum remain in the installer repository evidence.
 
@@ -138,6 +139,13 @@ Evidence links are repository-relative until a public URL or release artifact ex
 - Crystal cannot be pushed or released because `rpt-to-xml-modern` has no Git remote.
 - Repo Manager was implemented in the clean linked worktree `repomanager-portfolio`; the original worktree's 56 tracked vendor-asset deletions remain untouched.
 - PDF wrapper tests pass (15 tests), but `pdfxchange-tools-dotnet` is an entirely uncommitted initial worktree with no remote and no standalone UI/package baseline. It was left untouched.
+
+### 2026-07-25 — renderer repair and Database Tools publication
+
+- Auditable Reports local commit `ee94996` fixes the shared portable-reader boundary without disabling verification. The complete repository gate passes at 1,440×1,000 and 390×844, including 22 Python tests, static chart extraction, source-dialog interaction, chartless cleanup, Paged.js HTML, and PDF.
+- `incursa/database-tools#2` is a draft PR at `e242dd5`. Visual Studio/MSBuild Release build and VSIX packaging pass; 345 .NET tests pass. The VSIX SHA-256 is `D5C8C117FCAFD057D87E2C6D22B6B48B8ACD7D313D9579842877C32D2FFB7027`.
+- `incursa/database-tools-content#1` is a draft PR at `6f89ca4`. Validation covers 33 generic SQL Server and 81 Vista queries; 51 tests, deterministic generic builds, and generic packaging pass. The generic ZIP SHA-256 is `26126712C62F52ED31094E7EE9BC780D12B377F61908A310F41B346C7717EE08`.
+- Targeted scans of both public diffs found no credentials, client/overlay/private paths, observed knowledge bundles, connection strings, user-profile paths, or named-client material.
 
 ## Required evidence for each product milestone
 
