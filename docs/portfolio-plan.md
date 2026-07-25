@@ -26,12 +26,12 @@ Evidence links are repository-relative until a public URL or release artifact ex
 |---|---|---|
 | 0. Control baseline | Complete | `docs/repository-map.md`; GitHub auth verified; requested repositories cloned, initialized, and defaulted to `main` |
 | 1. Portfolio foundation | Complete; release pending | Control docs `7839fe4`; canonical SpecTrace artifacts; metadata-only pack PR `incursa/incursa-tooling-vsce#1` |
-| 2. CSV semantic comparison | Complete; release pending | Commit `5a430fd`; 37 Node tests, 25 existing checks, 8 parity fixtures, real web-host test; PR `incursa/csv-contract-vsce#2` |
-| 3. SpecTrace and Workbench | Complete with host limitation; release pending | Commit `a807429`; 33 web-host tests and optional desktop contract; ARM64 helper could not execute on this host; PR `incursa/spec-trace-vsce#2` |
-| 4. Database Knowledge Workbench | Complete; release pending | Commit `5d71bb8`; 14 security/parity tests, dual bundles, extension-host/visual QA; PR `incursa/database-knowledge-vsce#1` |
-| 5. Auditable Reports | Extension complete; final-bundle renderer blocked | Commit `bc0602a`; installed-host regression and verified VSIX; sibling portable-renderer failure recorded below |
+| 2. CSV semantic comparison | Complete; release pending | Commit `06799a7`; 37 Node tests, 25 existing checks, 8 parity fixtures, real web-host test, and protected exact-package publication; PR `incursa/csv-contract-vsce#2` |
+| 3. SpecTrace and Workbench | Complete with host limitation; release pending | Commit `1027fc3`; 33 web-host tests, optional desktop contract, and a real traceability-tree screenshot; ARM64 helper could not execute on this host; PR `incursa/spec-trace-vsce#2` |
+| 4. Database Knowledge Workbench | Complete; release pending | Commit `f4d3bf1`; 14 security/parity tests, dual bundles, extension-host/visual QA, and protected exact-package publication; PR `incursa/database-knowledge-vsce#1` |
+| 5. Auditable Reports | Extension complete; final-bundle renderer blocked | Commit `f064f49`; installed-host regression, verified VSIX, and exact-package publication; sibling portable-renderer failure recorded below |
 | 6. Standalone Windows tools | Repo Manager complete; Crystal/PDF blockers recorded | Repo Manager commit `4a76d63`, verified portable ZIP, and draft PR `incursa/repomanager#1`; Crystal commit `dfe87cf` and verified safe-parts ZIP |
-| 7. Incursa Tooling pack | Complete; release pending | Packaging commit `1085964`; verified metadata-only 17-entry VSIX; draft PR `incursa/incursa-tooling-vsce#1` |
+| 7. Incursa Tooling pack | Complete; release pending | Verified metadata-only 17-entry VSIX; portfolio release-policy verifier covers all five extensions; draft PR `incursa/incursa-tooling-vsce#1` |
 | 8. Unified installer | Six-component offline portfolio complete; other components blocked | Lifecycle-tested revision 3 with Repo Manager; exact pins/checksum in installer docs and draft PR `incursa/incursa-tooling-installer#1` |
 | 9. Release handoff | Ready with limitations | Seven draft PRs, five VSIXes, extension installer, Repo Manager ZIP, Crystal ZIP, Figma reference, and exact remaining external gates recorded |
 
@@ -73,15 +73,17 @@ Evidence links are repository-relative until a public URL or release artifact ex
 
 | Product | Version | Commit | Package bytes | SHA-256 | Draft PR |
 |---|---:|---|---:|---|---|
-| SpecTrace for VS Code | 1.2.0 | `a807429` | 641,548 | `14284fe30ff262be35cdc132b35abe5a8da1719af397d8e1412bdacd4d51fed0` | `incursa/spec-trace-vsce#2` |
-| CSV Contract Workbench | 0.6.0 | `5a430fd` | 574,143 | `429478acfc36ab19c42364faf4138a65007099624b905cecc1ff9e80f156bdad` | `incursa/csv-contract-vsce#2` |
-| Auditable Reports for VS Code | 0.1.3 | `bc0602a` | 368,898 | `dbdb41463bf2d1cdc561ee8277ebf4424bf568f74141f6a4bb729bf9c49bc47b` | `incursa/auditable-reports-vsce#1` |
-| Database Knowledge Workbench | 0.1.0 | `5d71bb8` | 94,795 | `d1fff2b122aa03af070c5ce6acae99288b9ca70b3cf42ce4cd53ad796e315e31` | `incursa/database-knowledge-vsce#1` |
+| SpecTrace for VS Code | 1.2.0 | `1027fc3` | 854,584 | `0ea4af965c99d80210a47656e2d596832428d8452b33e5ea6f234454f78d2086` | `incursa/spec-trace-vsce#2` |
+| CSV Contract Workbench | 0.6.0 | `06799a7` | 574,143 | `429478acfc36ab19c42364faf4138a65007099624b905cecc1ff9e80f156bdad` | `incursa/csv-contract-vsce#2` |
+| Auditable Reports for VS Code | 0.1.3 | `f064f49` | 368,898 | `dbdb41463bf2d1cdc561ee8277ebf4424bf568f74141f6a4bb729bf9c49bc47b` | `incursa/auditable-reports-vsce#1` |
+| Database Knowledge Workbench | 0.1.0 | `f4d3bf1` | 94,795 | `d1fff2b122aa03af070c5ce6acae99288b9ca70b3cf42ce4cd53ad796e315e31` | `incursa/database-knowledge-vsce#1` |
 | Incursa Tooling | 0.1.0 | `1085964` | 81,451 | `96163dbf6806e2f6f43a5ffa47f031aa95c023cbd5d899f5a02d260087083372` | `incursa/incursa-tooling-vsce#1` |
 
 - Every extension release gate built, tested, packaged, inspected, and scanned the public package boundary.
 - SpecTrace and CSV executed important workflows in the real VS Code web-extension host; neither browser bundle imports Node/native helpers.
+- SpecTrace now ships a real 1,600×1,200 VS Code web-host screenshot of the traceability tree and requirements workspace; its Chrome smoke path also verifies deterministic command-palette and tree navigation.
 - Database Knowledge visual and interaction QA passed at desktop and narrow widths; its public VSIX contains no private overlays or snapshots.
+- `scripts/Test-PortfolioReleasePolicy.ps1` verifies that all five Marketplace workflows use the protected `marketplace` environment, fail clearly without `VSCE_PAT`, and publish the already inspected VSIX through `--packagePath`.
 - Auditable Reports executed its bundled compiler from a real Windows extension host and retained canonical evidence in a chartless, source-hidden decision brief. The sibling final-report gate separately exposed a current Data Analytics portable-renderer regression: intermittent reader startup timeout and a 1440px horizontal-overflow failure. Compiler, Chart.js, Paged.js, paginated HTML, and PDF checks before that stage passed; no validation was disabled.
 - A fresh full sibling gate on 2026-07-24 reproduced the external renderer failure as `reader_timeout` while its state remained `fallback`; the sibling repository remained clean.
 
@@ -116,7 +118,7 @@ Evidence links are repository-relative until a public URL or release artifact ex
 - Verification: 46 tests, deterministic double-build, packaged doctor, no vulnerable NuGet packages, and real Chrome/Playwright QA at 1440×1000 and 390×844 with no console issues or horizontal overflow.
 - No-AI operation was verified with every Codex path removed. Commit/push now requires an exact read-only preview, explicit confirmation, configured dashboard scope, a remote, and an unchanged status/content fingerprint.
 - The isolated linked worktree supported the portfolio changes without touching the original 56-file vendor-asset deletion set.
-- Installer revision 3: `artifacts/Incursa.Tooling-Setup-0.1.0-r3.exe`; `41,480,100` bytes; SHA-256 `AAC57CAF72B08CB11D81D494CB033781026A8F8B2374E4080614570AF4A4B982`.
+- Installer revision 3: `artifacts/Incursa.Tooling-Setup-0.1.0-r3.exe`; the exact final byte count, SHA-256, component pins, and source commit are maintained in the installer repository test matrix and draft PR so this coordination ledger does not retain a superseded setup checksum.
 - Installer lifecycle: r2→r3 upgrade, full non-ASCII/space-containing path, installed Repo Manager doctor without Codex, locked executable exit 5, repair after unlock, locked output preflight, and uninstall/sentinel preservation all passed.
 
 ### 2026-07-24 — standalone tool evidence and blockers

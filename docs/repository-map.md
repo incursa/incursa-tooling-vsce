@@ -7,7 +7,7 @@ The portfolio is intentionally multi-repository. Runtime code remains owned by i
 | SpecTrace for VS Code | `incursa/spec-trace-vsce` | Web core with optional desktop entry | `main` at `b782955`, clean, version `1.1.2` |
 | CSV Contract Workbench | `incursa/csv-contract-vsce` | Web core plus desktop large-file path | `main` at `3a1ca5a`, clean, version `0.5.0` |
 | Auditable Reports for VS Code | `incursa/auditable-reports-vsce` | Windows desktop extension | `main` at `42171bc`, clean, version `0.1.2` |
-| Database Knowledge Workbench | `incursa/database-knowledge-vsce` | Windows-first extension plus bounded web subset | `main` initialized; feature commit `5d71bb8`; draft PR `#1` |
+| Database Knowledge Workbench | `incursa/database-knowledge-vsce` | Windows-first extension plus bounded web subset | `main` initialized; feature commit `f4d3bf1`; draft PR `#1` |
 | Incursa Tooling | `incursa/incursa-tooling-vsce` | Metadata-only extension pack and portfolio control | Empty public repository cloned locally |
 | Incursa Tooling Installer | `incursa/incursa-tooling-installer` | User-scoped Inno Setup aggregator | Empty public repository cloned locally |
 | Workbench | `incursa/workbench` | Optional structured desktop helper | `main` at `9614701`; unrelated deletion present |
