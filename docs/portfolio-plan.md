@@ -31,7 +31,7 @@ Evidence links are repository-relative until a public URL or release artifact ex
 | 4. Database Knowledge Workbench | Complete; release pending | Commit `5d71bb8`; 14 security/parity tests, dual bundles, extension-host/visual QA; PR `incursa/database-knowledge-vsce#1` |
 | 5. Auditable Reports | Extension complete; final-bundle renderer blocked | Commit `bc0602a`; installed-host regression and verified VSIX; sibling portable-renderer failure recorded below |
 | 6. Standalone Windows tools | Partially complete; protected blockers recorded | Crystal commit `dfe87cf` and verified safe-parts ZIP; Repo Manager/PDF source ownership blockers below |
-| 7. Incursa Tooling pack | Complete; release pending | Commit `32fd08a`; verified metadata-only 17-entry VSIX; draft PR `incursa/incursa-tooling-vsce#1` |
+| 7. Incursa Tooling pack | Complete; release pending | Packaging commit `1085964`; verified metadata-only 17-entry VSIX; draft PR `incursa/incursa-tooling-vsce#1` |
 | 8. Unified installer | Five-extension offline portfolio complete; other components blocked | Revision 2 commit `de12213`; lifecycle-tested setup; draft PR `incursa/incursa-tooling-installer#1` |
 | 9. Release handoff | Ready with limitations | Six draft PRs, five VSIXes, extension installer, Crystal ZIP, Figma reference, and exact remaining external gates recorded |
 
@@ -58,12 +58,12 @@ Evidence links are repository-relative until a public URL or release artifact ex
 ### 2026-07-24 — Incursa Tooling extension pack
 
 - Product version: `0.1.0`.
-- Commit: `32fd08a`.
+- Packaging commit: `1085964`.
 - Gate: `npm run release:check` passed.
 - Tests: 3 passed, 0 failed.
 - VSIX: `artifacts/incursa-tooling-vsce.vsix`.
-- Package size: `81,384` bytes.
-- SHA-256: `41ca418dde0191ad73c37b2bfc3b553e3a278ee32381f9f3ff2d7888ff993cfc`.
+- Package size: `81,451` bytes.
+- SHA-256: `96163dbf6806e2f6f43a5ffa47f031aa95c023cbd5d899f5a02d260087083372`.
 - VSIX identity: `incursa.incursa-tooling-vsce`; 17 entries; no `main`, `browser`, activation events, or runtime bundle.
 - Brand assets: deterministic 128 px icon, banner, monochrome SVG, and visually inspected brand sheet.
 - Audit: `npm audit --omit=dev` reported 0 production vulnerabilities.
@@ -77,7 +77,7 @@ Evidence links are repository-relative until a public URL or release artifact ex
 | CSV Contract Workbench | 0.6.0 | `5a430fd` | 574,143 | `429478acfc36ab19c42364faf4138a65007099624b905cecc1ff9e80f156bdad` | `incursa/csv-contract-vsce#2` |
 | Auditable Reports for VS Code | 0.1.3 | `bc0602a` | 368,898 | `dbdb41463bf2d1cdc561ee8277ebf4424bf568f74141f6a4bb729bf9c49bc47b` | `incursa/auditable-reports-vsce#1` |
 | Database Knowledge Workbench | 0.1.0 | `5d71bb8` | 94,795 | `d1fff2b122aa03af070c5ce6acae99288b9ca70b3cf42ce4cd53ad796e315e31` | `incursa/database-knowledge-vsce#1` |
-| Incursa Tooling | 0.1.0 | packaging commit below | 81,384 | `41ca418dde0191ad73c37b2bfc3b553e3a278ee32381f9f3ff2d7888ff993cfc` | `incursa/incursa-tooling-vsce#1` |
+| Incursa Tooling | 0.1.0 | `1085964` | 81,451 | `96163dbf6806e2f6f43a5ffa47f031aa95c023cbd5d899f5a02d260087083372` | `incursa/incursa-tooling-vsce#1` |
 
 - Every extension release gate built, tested, packaged, inspected, and scanned the public package boundary.
 - SpecTrace and CSV executed important workflows in the real VS Code web-extension host; neither browser bundle imports Node/native helpers.
