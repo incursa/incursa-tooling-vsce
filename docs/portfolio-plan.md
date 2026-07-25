@@ -62,9 +62,9 @@ Evidence links are repository-relative until a public URL or release artifact ex
 - Gate: `npm run release:check` passed.
 - Tests: 3 passed, 0 failed.
 - VSIX: `artifacts/incursa-tooling-vsce.vsix`.
-- Package size: `87,533` bytes.
-- SHA-256: `2d390d086e85c41dcf7d9a1d12f4c906d1718c87a5378f9565c0427210b2aeeb`.
-- VSIX identity: `incursa.incursa-tooling-vsce`; 20 entries; no `main`, `browser`, activation events, or runtime bundle.
+- Package size: `81,570` bytes.
+- SHA-256: `1164b91da155a618d30e2dd2b96978ec852473a232b338ba32b036cda1038321`.
+- VSIX identity: `incursa.incursa-tooling-vsce`; 17 entries; no `main`, `browser`, activation events, or runtime bundle.
 - Brand assets: deterministic 128 px icon, banner, monochrome SVG, and visually inspected brand sheet.
 - Audit: `npm audit --omit=dev` reported 0 production vulnerabilities.
 - Release and Marketplace URLs: pending release authorization and workflow execution.

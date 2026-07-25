@@ -9,4 +9,6 @@ node_modules/**
 images/*-master.svg
 images/brand-sheet.svg
 artifacts/**
-
+docs/portfolio-plan.md
+docs/acceptance-matrix.md
+docs/repository-map.md
