@@ -4,7 +4,7 @@ Canonical requirements live in `specs/requirements/incursa-tooling/SPEC-PORTFOLI
 
 | ID | Requirement | Verification evidence | State |
 |---|---|---|---|
-| PORT-001 | Portfolio documents and capability matrix match implemented products | Documentation and five-component installer-manifest validation at `de12213` | Complete |
+| PORT-001 | Portfolio documents and capability matrix match implemented products | Documentation plus the validated manifest on installer draft PR `#1` | Complete |
 | PORT-002 | New public repositories are initialized, pushed, and have working CI/release workflows | New repo `main` branches plus draft PRs; workflow runs wait for merge | Partial |
 | WEB-STR-001 | SpecTrace important workflows pass in the VS Code web-extension host | 33 web-host tests at `a807429` | Complete |
 | WEB-CSV-001 | CSV authoring and semantic comparison pass in the VS Code web-extension host | Real web-host release gate plus eight parity fixtures at `5a430fd` | Complete |
@@ -27,7 +27,7 @@ Canonical requirements live in `specs/requirements/incursa-tooling/SPEC-PORTFOLI
 | BRAND-001 | Every extension has verified icons, brand sheet, real screenshots, accessible UI, and Marketplace metadata | Asset gates pass; SpecTrace lacks a new screenshot for its added traceability tree | Partial |
 | REL-001 | Every extension produces an inspected VSIX with SHA-256 | Five-package table in `docs/portfolio-plan.md` | Complete |
 | REL-002 | Release workflows fail clearly without `VSCE_PAT` and publish only through the secret-backed environment | Workflow tests/review | Pending |
-| INST-001 | Installer is per-user, non-elevating, selectable, offline, and consumes only pinned verified artifacts | Five-extension revision 2 compile at `de12213` | Complete for extension portfolio |
+| INST-001 | Installer is per-user, non-elevating, selectable, offline, and consumes only pinned verified artifacts | Five-extension revision 2 on installer draft PR `#1` | Complete for extension portfolio |
 | INST-002 | Fresh/minimum/typical/full, modify, repair, upgrade, and uninstall preserve user data | Minimum, typical/full modify, repair, uninstall/sentinel pass; prior-revision upgrade pending | Partial |
 | INST-003 | Missing VS Code/SSMS/SAP/PDF-XChange degrades clearly without failing unrelated selections | Missing VS Code fallback passes; unstaged SSMS/SAP/PDF components remain pending | Partial |
 | INST-004 | Dirty, missing, unexpected, mutable, or hash-mismatched inputs are rejected | `scripts/Test-Repository.ps1`; dirty, unexpected, byte, and same-size hash tamper tests | Complete |

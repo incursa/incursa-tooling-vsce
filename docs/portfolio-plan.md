@@ -32,7 +32,7 @@ Evidence links are repository-relative until a public URL or release artifact ex
 | 5. Auditable Reports | Extension complete; final-bundle renderer blocked | Commit `bc0602a`; installed-host regression and verified VSIX; sibling portable-renderer failure recorded below |
 | 6. Standalone Windows tools | Partially complete; protected blockers recorded | Crystal commit `dfe87cf` and verified safe-parts ZIP; Repo Manager/PDF source ownership blockers below |
 | 7. Incursa Tooling pack | Complete; release pending | Packaging commit `1085964`; verified metadata-only 17-entry VSIX; draft PR `incursa/incursa-tooling-vsce#1` |
-| 8. Unified installer | Five-extension offline portfolio complete; other components blocked | Revision 2 commit `de12213`; lifecycle-tested setup; draft PR `incursa/incursa-tooling-installer#1` |
+| 8. Unified installer | Five-extension offline portfolio complete; other components blocked | Lifecycle-tested revision 2; exact current pin/checksum in installer docs and draft PR `incursa/incursa-tooling-installer#1` |
 | 9. Release handoff | Ready with limitations | Six draft PRs, five VSIXes, extension installer, Crystal ZIP, Figma reference, and exact remaining external gates recorded |
 
 ## Milestone evidence log
@@ -100,10 +100,9 @@ Evidence links are repository-relative until a public URL or release artifact ex
 
 ### 2026-07-24 — Incursa Tooling Setup extension portfolio
 
-- Commit: `de12213`; draft PR: `https://github.com/incursa/incursa-tooling-installer/pull/1`.
+- Draft PR: `https://github.com/incursa/incursa-tooling-installer/pull/1`; exact final commit and checksum are maintained with the installer fixture and `docs/windows-installer.md`.
 - Manifest: `fixtures/portfolio-extensions.components.json`; five clean repositories and exact VSIX identities validated.
-- Setup: `artifacts/Incursa.Tooling-Setup-0.1.0-r2.exe`; `3,822,220` bytes.
-- SHA-256: `664414ED76FCB6F3F559440763C4A3D4EFE28CE69DC88B6AEBF603FAE7870C43`.
+- Setup: `artifacts/Incursa.Tooling-Setup-0.1.0-r2.exe`; the copy-ready checksum sidecar is generated beside it.
 - Minimum, modify-to-typical, modify-to-full, same-revision repair, and uninstall passed in an isolated directory with VS Code tasks disabled.
 - The installed-components manifest matched the chosen type and a user-authored sentinel survived uninstall.
 - Remaining installer matrix: prior-revision upgrade, locked executable/output, non-ASCII path, Database Tools/SSMS, Repo Manager, Crystal, and PDF components.
