@@ -30,10 +30,10 @@ Evidence links are repository-relative until a public URL or release artifact ex
 | 3. SpecTrace and Workbench | Complete with host limitation; release pending | Commit `a807429`; 33 web-host tests and optional desktop contract; ARM64 helper could not execute on this host; PR `incursa/spec-trace-vsce#2` |
 | 4. Database Knowledge Workbench | Complete; release pending | Commit `5d71bb8`; 14 security/parity tests, dual bundles, extension-host/visual QA; PR `incursa/database-knowledge-vsce#1` |
 | 5. Auditable Reports | Extension complete; final-bundle renderer blocked | Commit `bc0602a`; installed-host regression and verified VSIX; sibling portable-renderer failure recorded below |
-| 6. Standalone Windows tools | Partially complete; protected blockers recorded | Crystal commit `dfe87cf` and verified safe-parts ZIP; Repo Manager/PDF source ownership blockers below |
+| 6. Standalone Windows tools | Repo Manager complete; Crystal/PDF blockers recorded | Repo Manager commit `4a76d63`, verified portable ZIP, and draft PR `incursa/repomanager#1`; Crystal commit `dfe87cf` and verified safe-parts ZIP |
 | 7. Incursa Tooling pack | Complete; release pending | Packaging commit `1085964`; verified metadata-only 17-entry VSIX; draft PR `incursa/incursa-tooling-vsce#1` |
-| 8. Unified installer | Five-extension offline portfolio complete; other components blocked | Lifecycle-tested revision 2; exact current pin/checksum in installer docs and draft PR `incursa/incursa-tooling-installer#1` |
-| 9. Release handoff | Ready with limitations | Six draft PRs, five VSIXes, extension installer, Crystal ZIP, Figma reference, and exact remaining external gates recorded |
+| 8. Unified installer | Six-component offline portfolio complete; other components blocked | Lifecycle-tested revision 3 with Repo Manager; exact pins/checksum in installer docs and draft PR `incursa/incursa-tooling-installer#1` |
+| 9. Release handoff | Ready with limitations | Seven draft PRs, five VSIXes, extension installer, Repo Manager ZIP, Crystal ZIP, Figma reference, and exact remaining external gates recorded |
 
 ## Milestone evidence log
 
@@ -83,6 +83,7 @@ Evidence links are repository-relative until a public URL or release artifact ex
 - SpecTrace and CSV executed important workflows in the real VS Code web-extension host; neither browser bundle imports Node/native helpers.
 - Database Knowledge visual and interaction QA passed at desktop and narrow widths; its public VSIX contains no private overlays or snapshots.
 - Auditable Reports executed its bundled compiler from a real Windows extension host and retained canonical evidence in a chartless, source-hidden decision brief. The sibling final-report gate separately exposed a current Data Analytics portable-renderer regression: intermittent reader startup timeout and a 1440px horizontal-overflow failure. Compiler, Chart.js, Paged.js, paginated HTML, and PDF checks before that stage passed; no validation was disabled.
+- A fresh full sibling gate on 2026-07-24 reproduced the external renderer failure as `reader_timeout` while its state remained `fallback`; the sibling repository remained clean.
 
 ### 2026-07-24 — Incursa Tooling Setup foundation
 
@@ -107,13 +108,24 @@ Evidence links are repository-relative until a public URL or release artifact ex
 - The installed-components manifest matched the chosen type and a user-authored sentinel survived uninstall.
 - Remaining installer matrix: prior-revision upgrade, locked executable/output, non-ASCII path, Database Tools/SSMS, Repo Manager, Crystal, and PDF components.
 
+### 2026-07-24 — Repo Manager and installer revision 3
+
+- Repo Manager implementation commit: `4a76d630f6d659e88b7b8351f6f771058acc5419`.
+- Draft PR: `https://github.com/incursa/repomanager/pull/1`; Windows verification passed.
+- Portable ZIP: `repomanager-portfolio/artifacts/Incursa.RepoManager-0.1.0-win-x64.zip`; `55,921,169` bytes; SHA-256 `75a95367d300f12fa6928add73bef789f85630c9b89ee72787c471dd3add39d6`.
+- Verification: 46 tests, deterministic double-build, packaged doctor, no vulnerable NuGet packages, and real Chrome/Playwright QA at 1440×1000 and 390×844 with no console issues or horizontal overflow.
+- No-AI operation was verified with every Codex path removed. Commit/push now requires an exact read-only preview, explicit confirmation, configured dashboard scope, a remote, and an unchanged status/content fingerprint.
+- The isolated linked worktree supported the portfolio changes without touching the original 56-file vendor-asset deletion set.
+- Installer revision 3: `artifacts/Incursa.Tooling-Setup-0.1.0-r3.exe`; `41,480,100` bytes; SHA-256 `AAC57CAF72B08CB11D81D494CB033781026A8F8B2374E4080614570AF4A4B982`.
+- Installer lifecycle: r2→r3 upgrade, full non-ASCII/space-containing path, installed Repo Manager doctor without Codex, locked executable exit 5, repair after unlock, locked output preflight, and uninstall/sentinel preservation all passed.
+
 ### 2026-07-24 — standalone tool evidence and blockers
 
 - Crystal Report Inspector `1.3.0` commit `dfe87cf` passes 14 tests, hostile-XML rejection, local HTML inspection, bounded comparison, and safe-package smoke.
 - Crystal safe-parts ZIP: `rpt-to-xml-modern/artifacts/CrystalReportInspector-1.3.0.zip`; `1,750,088` bytes; SHA-256 `edb34395e356a033b510a2c17845599e7c4b700c05d4854b67c93f3db23ea33b`.
 - The safe package intentionally excludes SAP assemblies. XML inspection works; `doctor` accurately reports x86 RPT extraction unavailable because the licensed runtime is absent.
 - Crystal cannot be pushed or released because `rpt-to-xml-modern` has no Git remote.
-- Repo Manager tests pass, but its worktree contains 56 pre-existing tracked vendor-asset deletions. Packaging that ambiguous state would absorb user work, so no release artifact was created.
+- Repo Manager was implemented in the clean linked worktree `repomanager-portfolio`; the original worktree's 56 tracked vendor-asset deletions remain untouched.
 - PDF wrapper tests pass (15 tests), but `pdfxchange-tools-dotnet` is an entirely uncommitted initial worktree with no remote and no standalone UI/package baseline. It was left untouched.
 
 ## Required evidence for each product milestone

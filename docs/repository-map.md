@@ -14,7 +14,7 @@ The portfolio is intentionally multi-repository. Runtime code remains owned by i
 | SpecTrace standard | `incursa/spec-trace` | Canonical artifact model and templates | `main` at `37a1f73`; unrelated changes present |
 | Database Tools | `incursa/database-tools` | Host-independent knowledge/query/overlay/workspace/operations engines | `main` at `8d5fdaf`, ahead of remote; unrelated files present |
 | Database Tools content | `incursa/database-tools-content` | Approved generic content | `main` at `6f89ca4`, ahead of remote |
-| Incursa Repo Manager | `incursa/repomanager` | Standalone .NET application | `main` at `010904d`; unrelated vendor-asset deletions present |
+| Incursa Repo Manager | `incursa/repomanager` | Standalone .NET application | clean linked-worktree feature commit `4a76d63`, draft PR `#1`; original `main` worktree vendor-asset deletions remain protected |
 | Crystal Report Inspector | local `rpt-to-xml-modern` | Standalone Windows tool | feature commit `dfe87cf`; no remote configured |
 | PDF Workbench | local `pdfxchange-tools-dotnet` | Standalone Windows wrapper | uncommitted initial repository; no remote configured |
 | Incursa UI Kit | `incursa/ui-kit` | Canonical code design tokens and components | `main` at `68e2ad4`; substantial unrelated design-system work present |

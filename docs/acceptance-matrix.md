@@ -20,18 +20,18 @@ Canonical requirements live in `specs/requirements/incursa-tooling/SPEC-PORTFOLI
 | RPT-001 | Installed Auditable Reports VSIX resolves the bundled compiler on Windows | Real Windows extension-host preview plus path regression at `bc0602a` | Complete |
 | RPT-002 | Canonical `artifact.json`, paginated HTML, and PDF validation remain aligned | Compiler/Paged.js/PDF checks pass, but the final sibling gate hits portable-renderer overflow/startup failures | Partial; renderer blocker |
 | RPT-003 | Ordinary bundle commands forward print settings and replace outputs atomically | Implementation is present; full gate is blocked at the earlier portable-render stage | Partial; renderer blocker |
-| TOOL-RM-001 | Repo Manager portable release works without AI and previews/confirms Git changes | Tests pass; protected 56-file deletion set blocks trustworthy package | Blocked by protected worktree |
+| TOOL-RM-001 | Repo Manager portable release works without AI and previews/confirms Git changes | 46 tests, deterministic ZIP, packaged doctor, no-AI browser QA, stale-state guard, and draft PR `incursa/repomanager#1` at `4a76d63` | Complete |
 | TOOL-CRI-001 | Crystal Report Inspector extracts/browses/compares and reports runtime bitness accurately | 14 tests, safe ZIP, XML smoke, absent-runtime doctor at `dfe87cf` | Complete with SAP/runtime and no-remote limits |
 | TOOL-PDF-001 | PDF Workbench detects licensed capabilities, previews safe non-overwriting commands, and packages portably | Wrapper 15 tests pass; entire initial repo is uncommitted with no remote/UI baseline | Blocked by source ownership |
 | PACK-001 | Incursa Tooling remains metadata-only and lists the four member extensions | `npm run release:check`; `artifacts/VSIX-CONTENTS.json`; commit `4582e7b` | Complete |
 | BRAND-001 | Every extension has verified icons, brand sheet, real screenshots, accessible UI, and Marketplace metadata | Asset gates pass; SpecTrace lacks a new screenshot for its added traceability tree | Partial |
 | REL-001 | Every extension produces an inspected VSIX with SHA-256 | Five-package table in `docs/portfolio-plan.md` | Complete |
 | REL-002 | Release workflows fail clearly without `VSCE_PAT` and publish only through the secret-backed environment | Workflow tests/review | Pending |
-| INST-001 | Installer is per-user, non-elevating, selectable, offline, and consumes only pinned verified artifacts | Five-extension revision 2 on installer draft PR `#1` | Complete for extension portfolio |
-| INST-002 | Fresh/minimum/typical/full, modify, repair, upgrade, and uninstall preserve user data | Minimum, typical/full modify, repair, uninstall/sentinel pass; prior-revision upgrade pending | Partial |
+| INST-001 | Installer is per-user, non-elevating, selectable, offline, and consumes only pinned verified artifacts | Six-component revision 3 on installer draft PR `#1`, including pinned Repo Manager | Complete for staged portfolio |
+| INST-002 | Fresh/minimum/typical/full, modify, repair, upgrade, and uninstall preserve user data | Minimum/typical/full, modify, repair, r2→r3 upgrade, non-ASCII path, locked-file recovery, uninstall, and sentinel preservation pass | Complete for staged portfolio |
 | INST-003 | Missing VS Code/SSMS/SAP/PDF-XChange degrades clearly without failing unrelated selections | Missing VS Code fallback passes; unstaged SSMS/SAP/PDF components remain pending | Partial |
 | INST-004 | Dirty, missing, unexpected, mutable, or hash-mismatched inputs are rejected | `scripts/Test-Repository.ps1`; dirty, unexpected, byte, and same-size hash tamper tests | Complete |
-| INST-005 | Installed component manifest and setup checksum are generated | Smoke setup package and installed manifest at installer commit `d6e4dd1` | Complete |
+| INST-005 | Installed component manifest and setup checksum are generated | Revision 3 installed manifest plus setup SHA-256 `AAC57CAF…4B982` at installer commit `4f1d5a3` | Complete |
 | SEC-001 | Public diffs and packages contain no confidential material or credentials | Package inspections and repository confidentiality scans | Complete for packaged artifacts |
 | SEC-002 | No telemetry/upload/background listener is present | Source/package inspections across five extensions and installer | Complete for packaged artifacts |
 
