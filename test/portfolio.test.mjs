@@ -16,7 +16,7 @@ test("extension pack contains the four approved products exactly once", () => {
     "incursa.spec-trace-vsce",
     "incursa.csv-contract-vsce",
     "incursa.auditable-reports-vsce",
-    "incursa.database-knowledge-vsce"
+    "incursa.database-knowledge-workbench"
   ]);
   assert.equal(new Set(pkg.extensionPack).size, 4);
 });
@@ -33,4 +33,3 @@ test("portfolio links are HTTPS and repository-scoped", async () => {
     assert.match(readme, new RegExp(`https://github\\.com/incursa/${repo}`));
   }
 });
-

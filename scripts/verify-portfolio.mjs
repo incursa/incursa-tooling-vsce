@@ -8,7 +8,7 @@ const expected = [
   "incursa.spec-trace-vsce",
   "incursa.csv-contract-vsce",
   "incursa.auditable-reports-vsce",
-  "incursa.database-knowledge-vsce"
+  "incursa.database-knowledge-workbench"
 ];
 
 if (JSON.stringify(pkg.extensionPack) !== JSON.stringify(expected)) {
