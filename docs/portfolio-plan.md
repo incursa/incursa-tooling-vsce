@@ -31,7 +31,7 @@ Evidence links are repository-relative until a public URL or release artifact ex
 | 4. Database Knowledge Workbench | Pending | Bundle verification/index/search/inspection, safe candidate edits, sanitized fixtures, verified VSIX |
 | 5. Auditable Reports | Pending | Installed-VSIX compiler-path regression, print forwarding, artifact/PDF/HTML validation, atomic output |
 | 6. Standalone Windows tools | Pending | Repo Manager, Crystal Report Inspector, and PDF Workbench portable packages or precise external blockers |
-| 7. Incursa Tooling pack | Pending | Metadata-only extension pack, Marketplace page, capability check, verified VSIX |
+| 7. Incursa Tooling pack | Implementation complete; release pending | Commit `4582e7b`; verified metadata-only VSIX and capability checks; GitHub/Marketplace release remains gated |
 | 8. Unified installer | Pending | User-scoped selectable Inno Setup build, pinned component manifest, install/modify/repair/upgrade/uninstall evidence |
 | 9. Release handoff | Pending | Branches, commits, packages, hashes, release URLs, Marketplace URLs, Figma reference, remaining limitations |
 
@@ -54,6 +54,20 @@ Evidence links are repository-relative until a public URL or release artifact ex
   - component QA: 35 source-aligned components
 - Protected unrelated changes were detected in `spec-trace`, `database-tools`, `repomanager`, `pdfxchange-tools-dotnet`, and `ui-kit`. Implementation must not overwrite or absorb them accidentally.
 - Canonical execution contract: `specs/requirements/incursa-tooling/SPEC-PORTFOLIO.json`, `specs/work-items/WI-PORTFOLIO-0001.json`, and `specs/verification/VER-PORTFOLIO-0001.json`.
+
+### 2026-07-24 — Incursa Tooling extension pack
+
+- Product version: `0.1.0`.
+- Commit: `4582e7b`.
+- Gate: `npm run release:check` passed.
+- Tests: 3 passed, 0 failed.
+- VSIX: `artifacts/incursa-tooling-vsce.vsix`.
+- Package size: `87,533` bytes.
+- SHA-256: `2d390d086e85c41dcf7d9a1d12f4c906d1718c87a5378f9565c0427210b2aeeb`.
+- VSIX identity: `incursa.incursa-tooling-vsce`; 20 entries; no `main`, `browser`, activation events, or runtime bundle.
+- Brand assets: deterministic 128 px icon, banner, monochrome SVG, and visually inspected brand sheet.
+- Audit: `npm audit --omit=dev` reported 0 production vulnerabilities.
+- Release and Marketplace URLs: pending release authorization and workflow execution.
 
 ## Required evidence for each product milestone
 

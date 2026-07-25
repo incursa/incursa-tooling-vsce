@@ -23,7 +23,7 @@ Canonical requirements live in `specs/requirements/incursa-tooling/SPEC-PORTFOLI
 | TOOL-RM-001 | Repo Manager portable release works without AI and previews/confirms Git changes | Package, doctor, and integration tests | Pending |
 | TOOL-CRI-001 | Crystal Report Inspector extracts/browses/compares and reports runtime bitness accurately | Unit tests plus runtime-present/absent evidence | Pending |
 | TOOL-PDF-001 | PDF Workbench detects licensed capabilities, previews safe non-overwriting commands, and packages portably | Unit/integration/package evidence | Pending |
-| PACK-001 | Incursa Tooling remains metadata-only and lists the four member extensions | VSIX content and manifest test | Pending |
+| PACK-001 | Incursa Tooling remains metadata-only and lists the four member extensions | `npm run release:check`; `artifacts/VSIX-CONTENTS.json`; commit `4582e7b` | Complete |
 | BRAND-001 | Every extension has verified icons, brand sheet, real screenshots, accessible UI, and Marketplace metadata | Asset verification and accessibility checklist | Pending |
 | REL-001 | Every extension produces an inspected VSIX with SHA-256 | Release-check output | Pending |
 | REL-002 | Release workflows fail clearly without `VSCE_PAT` and publish only through the secret-backed environment | Workflow tests/review | Pending |
