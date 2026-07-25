@@ -24,16 +24,16 @@ Evidence links are repository-relative until a public URL or release artifact ex
 
 | Milestone | State | Evidence and next gate |
 |---|---|---|
-| 0. Control baseline | In progress | `docs/repository-map.md`; GitHub auth verified 2026-07-24; three requested empty repositories cloned |
-| 1. Portfolio foundation | In progress | Control documents committed at `7839fe4`; extension-pack scaffold and canonical SpecTrace artifacts in implementation |
-| 2. CSV semantic comparison | Pending | Canonical TypeScript comparison schema/engine, parity fixtures, browser-host tests, desktop streaming/spill path |
-| 3. SpecTrace and Workbench | Pending | Portable navigation/validation surfaces, optional trust-gated Workbench JSON contract, parity fixtures |
-| 4. Database Knowledge Workbench | Pending | Bundle verification/index/search/inspection, safe candidate edits, sanitized fixtures, verified VSIX |
-| 5. Auditable Reports | Pending | Installed-VSIX compiler-path regression, print forwarding, artifact/PDF/HTML validation, atomic output |
-| 6. Standalone Windows tools | Pending | Repo Manager, Crystal Report Inspector, and PDF Workbench portable packages or precise external blockers |
-| 7. Incursa Tooling pack | Implementation complete; release pending | Commit `4582e7b`; verified metadata-only VSIX and capability checks; GitHub/Marketplace release remains gated |
-| 8. Unified installer | Foundation implemented; full component release pending | `incursa-tooling-installer` commit `15e74f8`, smoke branch `d6e4dd1`, draft PR `incursa/incursa-tooling-installer#1` |
-| 9. Release handoff | Pending | Branches, commits, packages, hashes, release URLs, Marketplace URLs, Figma reference, remaining limitations |
+| 0. Control baseline | Complete | `docs/repository-map.md`; GitHub auth verified; requested repositories cloned, initialized, and defaulted to `main` |
+| 1. Portfolio foundation | Complete; release pending | Control docs `7839fe4`; canonical SpecTrace artifacts; metadata-only pack PR `incursa/incursa-tooling-vsce#1` |
+| 2. CSV semantic comparison | Complete; release pending | Commit `5a430fd`; 37 Node tests, 25 existing checks, 8 parity fixtures, real web-host test; PR `incursa/csv-contract-vsce#2` |
+| 3. SpecTrace and Workbench | Complete with host limitation; release pending | Commit `a807429`; 33 web-host tests and optional desktop contract; ARM64 helper could not execute on this host; PR `incursa/spec-trace-vsce#2` |
+| 4. Database Knowledge Workbench | Complete; release pending | Commit `5d71bb8`; 14 security/parity tests, dual bundles, extension-host/visual QA; PR `incursa/database-knowledge-vsce#1` |
+| 5. Auditable Reports | Extension complete; final-bundle renderer blocked | Commit `bc0602a`; installed-host regression and verified VSIX; sibling portable-renderer failure recorded below |
+| 6. Standalone Windows tools | Partially complete; protected blockers recorded | Crystal commit `dfe87cf` and verified safe-parts ZIP; Repo Manager/PDF source ownership blockers below |
+| 7. Incursa Tooling pack | Complete; release pending | Commit `32fd08a`; verified metadata-only 17-entry VSIX; draft PR `incursa/incursa-tooling-vsce#1` |
+| 8. Unified installer | Five-extension offline portfolio complete; other components blocked | Revision 2 commit `de12213`; lifecycle-tested setup; draft PR `incursa/incursa-tooling-installer#1` |
+| 9. Release handoff | Ready with limitations | Six draft PRs, five VSIXes, extension installer, Crystal ZIP, Figma reference, and exact remaining external gates recorded |
 
 ## Milestone evidence log
 
@@ -58,16 +58,31 @@ Evidence links are repository-relative until a public URL or release artifact ex
 ### 2026-07-24 — Incursa Tooling extension pack
 
 - Product version: `0.1.0`.
-- Commit: `4582e7b`.
+- Commit: `32fd08a`.
 - Gate: `npm run release:check` passed.
 - Tests: 3 passed, 0 failed.
 - VSIX: `artifacts/incursa-tooling-vsce.vsix`.
 - Package size: `81,570` bytes.
-- SHA-256: `1164b91da155a618d30e2dd2b96978ec852473a232b338ba32b036cda1038321`.
+- SHA-256: `e504d8aae3879ee0de93983d2a084aa2af5dbb678aa6043265a93a318a713c0d`.
 - VSIX identity: `incursa.incursa-tooling-vsce`; 17 entries; no `main`, `browser`, activation events, or runtime bundle.
 - Brand assets: deterministic 128 px icon, banner, monochrome SVG, and visually inspected brand sheet.
 - Audit: `npm audit --omit=dev` reported 0 production vulnerabilities.
 - Release and Marketplace URLs: pending release authorization and workflow execution.
+
+### 2026-07-24 — verified extension portfolio
+
+| Product | Version | Commit | Package bytes | SHA-256 | Draft PR |
+|---|---:|---|---:|---|---|
+| SpecTrace for VS Code | 1.2.0 | `a807429` | 641,548 | `14284fe30ff262be35cdc132b35abe5a8da1719af397d8e1412bdacd4d51fed0` | `incursa/spec-trace-vsce#2` |
+| CSV Contract Workbench | 0.6.0 | `5a430fd` | 574,143 | `429478acfc36ab19c42364faf4138a65007099624b905cecc1ff9e80f156bdad` | `incursa/csv-contract-vsce#2` |
+| Auditable Reports for VS Code | 0.1.3 | `bc0602a` | 368,898 | `dbdb41463bf2d1cdc561ee8277ebf4424bf568f74141f6a4bb729bf9c49bc47b` | `incursa/auditable-reports-vsce#1` |
+| Database Knowledge Workbench | 0.1.0 | `5d71bb8` | 94,795 | `d1fff2b122aa03af070c5ce6acae99288b9ca70b3cf42ce4cd53ad796e315e31` | `incursa/database-knowledge-vsce#1` |
+| Incursa Tooling | 0.1.0 | `32fd08a` | 81,570 | `e504d8aae3879ee0de93983d2a084aa2af5dbb678aa6043265a93a318a713c0d` | `incursa/incursa-tooling-vsce#1` |
+
+- Every extension release gate built, tested, packaged, inspected, and scanned the public package boundary.
+- SpecTrace and CSV executed important workflows in the real VS Code web-extension host; neither browser bundle imports Node/native helpers.
+- Database Knowledge visual and interaction QA passed at desktop and narrow widths; its public VSIX contains no private overlays or snapshots.
+- Auditable Reports executed its bundled compiler from a real Windows extension host and retained canonical evidence in a chartless, source-hidden decision brief. The sibling final-report gate separately exposed a current Data Analytics portable-renderer regression: intermittent reader startup timeout and a 1440px horizontal-overflow failure. Compiler, Chart.js, Paged.js, paginated HTML, and PDF checks before that stage passed; no validation was disabled.
 
 ### 2026-07-24 — Incursa Tooling Setup foundation
 
@@ -82,6 +97,25 @@ Evidence links are repository-relative until a public URL or release artifact ex
 - Fresh minimum install, reinstall/repair, and uninstall passed; user-authored sentinel survived uninstall.
 - Missing VS Code Insiders produced the intended offline manual command without failing setup.
 - Remaining: full component manifest, typical/full/modify/prior-revision upgrade tests, standalone tool packages, SSMS/SAP/PDF-XChange prerequisite cases, locked files, and path variants.
+
+### 2026-07-24 — Incursa Tooling Setup extension portfolio
+
+- Commit: `de12213`; draft PR: `https://github.com/incursa/incursa-tooling-installer/pull/1`.
+- Manifest: `fixtures/portfolio-extensions.components.json`; five clean repositories and exact VSIX identities validated.
+- Setup: `artifacts/Incursa.Tooling-Setup-0.1.0-r2.exe`; `3,822,220` bytes.
+- SHA-256: `664414ED76FCB6F3F559440763C4A3D4EFE28CE69DC88B6AEBF603FAE7870C43`.
+- Minimum, modify-to-typical, modify-to-full, same-revision repair, and uninstall passed in an isolated directory with VS Code tasks disabled.
+- The installed-components manifest matched the chosen type and a user-authored sentinel survived uninstall.
+- Remaining installer matrix: prior-revision upgrade, locked executable/output, non-ASCII path, Database Tools/SSMS, Repo Manager, Crystal, and PDF components.
+
+### 2026-07-24 — standalone tool evidence and blockers
+
+- Crystal Report Inspector `1.3.0` commit `dfe87cf` passes 14 tests, hostile-XML rejection, local HTML inspection, bounded comparison, and safe-package smoke.
+- Crystal safe-parts ZIP: `rpt-to-xml-modern/artifacts/CrystalReportInspector-1.3.0.zip`; `1,750,088` bytes; SHA-256 `edb34395e356a033b510a2c17845599e7c4b700c05d4854b67c93f3db23ea33b`.
+- The safe package intentionally excludes SAP assemblies. XML inspection works; `doctor` accurately reports x86 RPT extraction unavailable because the licensed runtime is absent.
+- Crystal cannot be pushed or released because `rpt-to-xml-modern` has no Git remote.
+- Repo Manager tests pass, but its worktree contains 56 pre-existing tracked vendor-asset deletions. Packaging that ambiguous state would absorb user work, so no release artifact was created.
+- PDF wrapper tests pass (15 tests), but `pdfxchange-tools-dotnet` is an entirely uncommitted initial worktree with no remote and no standalone UI/package baseline. It was left untouched.
 
 ## Required evidence for each product milestone
 
