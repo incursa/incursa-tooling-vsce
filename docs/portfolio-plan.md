@@ -32,8 +32,8 @@ Evidence links are repository-relative until a public URL or release artifact ex
 | 5. Auditable Reports | Extension complete; final-bundle renderer blocked | Commit `f064f49`; installed-host regression, verified VSIX, and exact-package publication; sibling portable-renderer failure recorded below |
 | 6. Standalone Windows tools | Repo Manager complete; Crystal/PDF blockers recorded | Repo Manager commit `4a76d63`, verified portable ZIP, and draft PR `incursa/repomanager#1`; Crystal commit `dfe87cf` and verified safe-parts ZIP |
 | 7. Incursa Tooling pack | Complete; release pending | Verified metadata-only 17-entry VSIX; portfolio release-policy verifier covers all five extensions; draft PR `incursa/incursa-tooling-vsce#1` |
-| 8. Unified installer | Six-component offline portfolio complete; other components blocked | Lifecycle-tested revision 3 with Repo Manager; exact pins/checksum in installer docs and draft PR `incursa/incursa-tooling-installer#1` |
-| 9. Release handoff | Ready with limitations | Seven draft PRs, five VSIXes, extension installer, Repo Manager ZIP, Crystal ZIP, Figma reference, and exact remaining external gates recorded |
+| 8. Unified installer | Seven-component offline portfolio complete; companion blockers recorded | Lifecycle-tested revision 4 with Repo Manager and generic-only Database Tools; exact pins/checksum in installer docs and draft PR `incursa/incursa-tooling-installer#1` |
+| 9. Release handoff | Ready with limitations | Seven draft PRs, five VSIXes, unified installer, Database Tools installer, Repo Manager ZIP, Crystal ZIP, Figma reference, and exact remaining external gates recorded |
 
 ## Milestone evidence log
 
@@ -120,6 +120,15 @@ Evidence links are repository-relative until a public URL or release artifact ex
 - The isolated linked worktree supported the portfolio changes without touching the original 56-file vendor-asset deletion set.
 - Installer revision 3: `artifacts/Incursa.Tooling-Setup-0.1.0-r3.exe`; the exact final byte count, SHA-256, component pins, and source commit are maintained in the installer repository test matrix and draft PR so this coordination ledger does not retain a superseded setup checksum.
 - Installer lifecycle: r2→r3 upgrade, full non-ASCII/space-containing path, installed Repo Manager doctor without Codex, locked executable exit 5, repair after unlock, locked output preflight, and uninstall/sentinel preservation all passed.
+
+### 2026-07-24 — Database Tools and installer revision 4
+
+- A clean linked Database Tools worktree at commit `8d5fdaffcde106b82cfa8a709adafc9fee17f27b` produced the generic-only `0.13.2` installer from content checkpoint `6f89ca49ae94dc134f27c0fbb586477f7e38230a`.
+- Database Tools installer: `database-tools-portfolio/artifacts/Incursa.DatabaseTools-Setup-0.13.2-6f89ca4-r2.exe`; `4,424,480` bytes; SHA-256 `5AF1618534D6A5C36ADE0CF7CE68EE5E5EC47F60A7213E03FD5764FB3BA13E91`.
+- Package evidence confirms 154 manifested files, zero bundled knowledge sources, no private content, and no customer overlay. Silent install without SSMS, Unicode/space path handling, and ordinary uninstall with a preserved user workspace sentinel passed.
+- The source commit is a clean local build point atop pre-existing local work and is deliberately not represented as a remote release. The portfolio did not publish those unrelated pre-existing commits.
+- Installer revision 4 pins and stages the verified Database Tools setup alongside the five VSIX packages and Repo Manager. Its capability report explicitly treats missing SSMS 22 as nonfatal; interactive setup alone may launch the nested installer.
+- Installer lifecycle: r3→r4 upgrade, seven-component full install, exact nested-installer hash verification, missing-SSMS capability reporting, Repo Manager no-Codex doctor, locked executable recovery, and uninstall/sentinel preservation all passed. Exact setup bytes and checksum remain in the installer repository evidence.
 
 ### 2026-07-24 — standalone tool evidence and blockers
 
