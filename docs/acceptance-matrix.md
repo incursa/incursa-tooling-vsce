@@ -27,11 +27,11 @@ Canonical requirements live in `specs/requirements/incursa-tooling/SPEC-PORTFOLI
 | BRAND-001 | Every extension has verified icons, brand sheet, real screenshots, accessible UI, and Marketplace metadata | Asset verification and accessibility checklist | Pending |
 | REL-001 | Every extension produces an inspected VSIX with SHA-256 | Release-check output | Pending |
 | REL-002 | Release workflows fail clearly without `VSCE_PAT` and publish only through the secret-backed environment | Workflow tests/review | Pending |
-| INST-001 | Installer is per-user, non-elevating, selectable, offline, and consumes only pinned verified artifacts | Inno script tests and staged manifest | Pending |
-| INST-002 | Fresh/minimum/typical/full, modify, repair, upgrade, and uninstall preserve user data | Windows test matrix | Pending |
-| INST-003 | Missing VS Code/SSMS/SAP/PDF-XChange degrades clearly without failing unrelated selections | Windows test matrix | Pending |
-| INST-004 | Dirty, missing, unexpected, mutable, or hash-mismatched inputs are rejected | Builder negative tests | Pending |
-| INST-005 | Installed component manifest and setup checksum are generated | Package inspection | Pending |
+| INST-001 | Installer is per-user, non-elevating, selectable, offline, and consumes only pinned verified artifacts | Foundation compile and pinned extension-pack smoke at installer commit `d6e4dd1` | Partial |
+| INST-002 | Fresh/minimum/typical/full, modify, repair, upgrade, and uninstall preserve user data | Fresh minimum, reinstall/repair, uninstall, and sentinel preservation passed; full matrix pending | Partial |
+| INST-003 | Missing VS Code/SSMS/SAP/PDF-XChange degrades clearly without failing unrelated selections | Missing VS Code Insiders fallback passed; remaining prerequisites pending | Partial |
+| INST-004 | Dirty, missing, unexpected, mutable, or hash-mismatched inputs are rejected | `scripts/Test-Repository.ps1`; dirty, unexpected, byte, and same-size hash tamper tests | Complete |
+| INST-005 | Installed component manifest and setup checksum are generated | Smoke setup package and installed manifest at installer commit `d6e4dd1` | Complete |
 | SEC-001 | Public diffs and packages contain no confidential material or credentials | Confidentiality scan | Pending |
 | SEC-002 | No telemetry/upload/background listener is present | Source/package inspection | Pending |
 

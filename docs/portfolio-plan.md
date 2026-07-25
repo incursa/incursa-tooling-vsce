@@ -32,7 +32,7 @@ Evidence links are repository-relative until a public URL or release artifact ex
 | 5. Auditable Reports | Pending | Installed-VSIX compiler-path regression, print forwarding, artifact/PDF/HTML validation, atomic output |
 | 6. Standalone Windows tools | Pending | Repo Manager, Crystal Report Inspector, and PDF Workbench portable packages or precise external blockers |
 | 7. Incursa Tooling pack | Implementation complete; release pending | Commit `4582e7b`; verified metadata-only VSIX and capability checks; GitHub/Marketplace release remains gated |
-| 8. Unified installer | Pending | User-scoped selectable Inno Setup build, pinned component manifest, install/modify/repair/upgrade/uninstall evidence |
+| 8. Unified installer | Foundation implemented; full component release pending | `incursa-tooling-installer` commit `15e74f8`, smoke branch `d6e4dd1`, draft PR `incursa/incursa-tooling-installer#1` |
 | 9. Release handoff | Pending | Branches, commits, packages, hashes, release URLs, Marketplace URLs, Figma reference, remaining limitations |
 
 ## Milestone evidence log
@@ -68,6 +68,20 @@ Evidence links are repository-relative until a public URL or release artifact ex
 - Brand assets: deterministic 128 px icon, banner, monochrome SVG, and visually inspected brand sheet.
 - Audit: `npm audit --omit=dev` reported 0 production vulnerabilities.
 - Release and Marketplace URLs: pending release authorization and workflow execution.
+
+### 2026-07-24 — Incursa Tooling Setup foundation
+
+- Repository initialized and pushed: `incursa/incursa-tooling-installer`.
+- Foundation commit: `15e74f8`.
+- Pinned extension-pack smoke commit: `d6e4dd1`.
+- Draft pull request: `https://github.com/incursa/incursa-tooling-installer/pull/1`.
+- Repository gate: strict component ID, remote, full commit, clean worktree, filename, byte-count, VSIX identity, and SHA-256 verification passed.
+- Negative tests: unexpected component, dirty repository, byte-count tamper, and same-size SHA-256 tamper all rejected.
+- Inno Setup: version `6.7.3`; per-user compile passed with `PrivilegesRequired=lowest`.
+- Smoke setup: `artifacts/Incursa.Tooling-Setup-0.1.0-r1.exe`; `2,182,157` bytes; SHA-256 `9C3F20FC9F55FE4A76F982FC3104C2F8BA518E639C61935ED056381FD5C8B1BB`.
+- Fresh minimum install, reinstall/repair, and uninstall passed; user-authored sentinel survived uninstall.
+- Missing VS Code Insiders produced the intended offline manual command without failing setup.
+- Remaining: full component manifest, typical/full/modify/prior-revision upgrade tests, standalone tool packages, SSMS/SAP/PDF-XChange prerequisite cases, locked files, and path variants.
 
 ## Required evidence for each product milestone
 
