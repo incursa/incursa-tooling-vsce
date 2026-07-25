@@ -25,7 +25,7 @@ Evidence links are repository-relative until a public URL or release artifact ex
 | Milestone | State | Evidence and next gate |
 |---|---|---|
 | 0. Control baseline | In progress | `docs/repository-map.md`; GitHub auth verified 2026-07-24; three requested empty repositories cloned |
-| 1. Portfolio foundation | In progress | This plan, capability matrix, design system, security model, release runbook, and acceptance matrix |
+| 1. Portfolio foundation | In progress | Control documents committed at `7839fe4`; extension-pack scaffold and canonical SpecTrace artifacts in implementation |
 | 2. CSV semantic comparison | Pending | Canonical TypeScript comparison schema/engine, parity fixtures, browser-host tests, desktop streaming/spill path |
 | 3. SpecTrace and Workbench | Pending | Portable navigation/validation surfaces, optional trust-gated Workbench JSON contract, parity fixtures |
 | 4. Database Knowledge Workbench | Pending | Bundle verification/index/search/inspection, safe candidate edits, sanitized fixtures, verified VSIX |
@@ -53,6 +53,7 @@ Evidence links are repository-relative until a public URL or release artifact ex
   - collections: Primitives, Color, Spacing & Size, Typography
   - component QA: 35 source-aligned components
 - Protected unrelated changes were detected in `spec-trace`, `database-tools`, `repomanager`, `pdfxchange-tools-dotnet`, and `ui-kit`. Implementation must not overwrite or absorb them accidentally.
+- Canonical execution contract: `specs/requirements/incursa-tooling/SPEC-PORTFOLIO.json`, `specs/work-items/WI-PORTFOLIO-0001.json`, and `specs/verification/VER-PORTFOLIO-0001.json`.
 
 ## Required evidence for each product milestone
 

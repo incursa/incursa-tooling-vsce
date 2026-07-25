@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
+  <title id="title">Incursa Tooling</title>
+  <desc id="desc">A coordinated portfolio for specifications, data contracts, reports, and database knowledge.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#121316"/>
+      <stop offset=".64" stop-color="#2B397F"/>
+      <stop offset="1" stop-color="#4459C6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="320" rx="28" fill="url(#bg)"/>
+  <g transform="translate(72 56)">
+    <rect width="208" height="208" rx="48" fill="#4459C6" stroke="#8798EE" stroke-width="3"/>
+    <path d="M58 52h92v29h-31v46h31v29H58v-29h31V81H58z" fill="#FFF"/>
+    <rect x="27" y="27" width="38" height="38" rx="10" fill="#FFF06C"/>
+    <rect x="143" y="27" width="38" height="38" rx="10" fill="#B9C5FF"/>
+    <rect x="27" y="143" width="38" height="38" rx="10" fill="#96EFBD"/>
+    <rect x="143" y="143" width="38" height="38" rx="10" fill="#FFB2BB"/>
+  </g>
+  <text x="330" y="143" fill="#FFF" font-family="IBM Plex Sans,Segoe UI,sans-serif" font-size="58" font-weight="600">Incursa Tooling</text>
+  <text x="334" y="194" fill="#DFE5FF" font-family="IBM Plex Sans,Segoe UI,sans-serif" font-size="23">Specifications · CSV contracts · Auditable reports · Database knowledge</text>
+  <g transform="translate(334 230)" font-family="IBM Plex Mono,Consolas,monospace" font-size="15" fill="#FFF">
+    <rect width="139" height="35" rx="17.5" fill="#FFFFFF18" stroke="#FFFFFF38"/>
+    <text x="23" y="23">offline-first</text>
+    <rect x="152" width="125" height="35" rx="17.5" fill="#FFFFFF18" stroke="#FFFFFF38"/>
+    <text x="176" y="23">no telemetry</text>
+    <rect x="290" width="137" height="35" rx="17.5" fill="#FFFFFF18" stroke="#FFFFFF38"/>
+    <text x="313" y="23">independent tools</text>
+  </g>
+</svg>
+

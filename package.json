@@ -1,0 +1,65 @@
+{
+  "name": "incursa-tooling-vsce",
+  "displayName": "Incursa Tooling",
+  "description": "Install the Incursa portfolio for specifications, CSV contracts, auditable reports, and offline database knowledge.",
+  "version": "0.1.0",
+  "publisher": "incursa",
+  "license": "SEE LICENSE IN LICENSE",
+  "engines": {
+    "vscode": "^1.110.0"
+  },
+  "preview": true,
+  "pricing": "Free",
+  "markdown": "github",
+  "galleryBanner": {
+    "color": "#2B397F",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/incursa/incursa-tooling-vsce.git"
+  },
+  "homepage": "https://github.com/incursa/incursa-tooling-vsce#readme",
+  "bugs": {
+    "url": "https://github.com/incursa/incursa-tooling-vsce/issues"
+  },
+  "categories": [
+    "Extension Packs",
+    "Testing",
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "incursa",
+    "specifications",
+    "traceability",
+    "csv",
+    "reports",
+    "database",
+    "knowledge"
+  ],
+  "icon": "images/icon.png",
+  "extensionPack": [
+    "incursa.spec-trace-vsce",
+    "incursa.csv-contract-vsce",
+    "incursa.auditable-reports-vsce",
+    "incursa.database-knowledge-vsce"
+  ],
+  "scripts": {
+    "brand:build": "node scripts/build-brand-assets.mjs",
+    "brand:verify": "node scripts/verify-brand-assets.mjs",
+    "test": "node --test test/**/*.test.mjs",
+    "portfolio:verify": "node scripts/verify-portfolio.mjs",
+    "verify": "npm run brand:verify && npm run test && npm run portfolio:verify",
+    "package:vsix": "node scripts/prepare-artifacts.mjs && vsce package --out artifacts/incursa-tooling-vsce.vsix",
+    "package:inspect": "node scripts/inspect-vsix.mjs",
+    "checksums": "node scripts/write-checksums.mjs",
+    "release:check": "npm run verify && npm run package:vsix && npm run package:inspect && npm run checksums"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.7.1",
+    "adm-zip": "^0.5.16",
+    "sharp": "^0.34.5"
+  }
+}
+

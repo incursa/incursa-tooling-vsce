@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Incursa Tooling</title>
+  <desc id="desc">Four connected work surfaces forming an I-shaped tool portfolio.</desc>
+  <defs>
+    <linearGradient id="bg" x1="64" y1="40" x2="448" y2="472" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4459C6"/>
+      <stop offset="1" stop-color="#2B397F"/>
+    </linearGradient>
+  </defs>
+  <rect x="24" y="24" width="464" height="464" rx="104" fill="url(#bg)"/>
+  <path d="M151 139h210v58H284v118h77v58H151v-58h77V197h-77z" fill="#FFF"/>
+  <rect x="94" y="94" width="76" height="76" rx="20" fill="#FFF06C"/>
+  <rect x="342" y="94" width="76" height="76" rx="20" fill="#B9C5FF"/>
+  <rect x="94" y="342" width="76" height="76" rx="20" fill="#96EFBD"/>
+  <rect x="342" y="342" width="76" height="76" rx="20" fill="#FFB2BB"/>
+  <path d="M170 132h46M296 132h46M132 170v172M380 170v172M170 380h172" stroke="#FFF" stroke-width="14" stroke-linecap="round" opacity=".72"/>
+</svg>
+

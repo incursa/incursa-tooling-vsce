@@ -1,0 +1,83 @@
+{
+  "$schema": "https://raw.githubusercontent.com/incursa/spec-trace/main/model/model.schema.json",
+  "artifact_id": "SPEC-INCURSA-TOOLING-PORTFOLIO",
+  "artifact_type": "specification",
+  "title": "Incursa VS Code and Local Tooling Portfolio",
+  "domain": "incursa-tooling",
+  "capability": "portfolio-delivery",
+  "status": "approved",
+  "owner": "incursa",
+  "purpose": "Define the machine-verifiable product, portability, security, packaging, and release contract for the Incursa tooling portfolio.",
+  "requirements": [
+    {
+      "id": "REQ-PORT-0001",
+      "title": "Keep product boundaries independent",
+      "statement": "The portfolio MUST keep domain extensions and standalone tools independently buildable, versioned, packaged, installed, upgraded, and uninstalled while the Incursa Tooling extension remains metadata-only.",
+      "x_acceptance_ids": ["PORT-001", "PORT-002", "PACK-001"],
+      "coverage": {"positive": "required", "negative": "required", "edge": "required", "fuzz": "deferred"}
+    },
+    {
+      "id": "REQ-PORT-0002",
+      "title": "Preserve portable web cores",
+      "statement": "SpecTrace and CSV Contract Workbench MUST retain tested VS Code web-host workflows and browser bundles MUST exclude desktop-only dependencies.",
+      "x_acceptance_ids": ["WEB-STR-001", "WEB-CSV-001", "WEB-BOUND-001"],
+      "coverage": {"positive": "required", "negative": "required", "edge": "required", "fuzz": "optional"}
+    },
+    {
+      "id": "REQ-PORT-0003",
+      "title": "Compare CSVs deterministically",
+      "statement": "CSV semantic comparison MUST provide deterministic full-row and keyed results, explicit normalization, exact duplicate handling, bounded diagnostics, and evidence outputs.",
+      "x_acceptance_ids": ["CSV-SEM-001", "CSV-SEM-002", "CSV-SEM-003", "CSV-DESK-001"],
+      "coverage": {"positive": "required", "negative": "required", "edge": "required", "fuzz": "required"}
+    },
+    {
+      "id": "REQ-PORT-0004",
+      "title": "Keep desktop helpers optional and safe",
+      "statement": "Desktop helpers MUST remain optional, require Workspace Trust, use allowlisted structured commands, preserve cancellation and timeouts, and bound output.",
+      "x_acceptance_ids": ["STR-WB-001"],
+      "coverage": {"positive": "required", "negative": "required", "edge": "required", "fuzz": "optional"}
+    },
+    {
+      "id": "REQ-PORT-0005",
+      "title": "Browse verified database knowledge",
+      "statement": "Database Knowledge Workbench MUST verify, index, search, and inspect sanitized knowledge bundles without live SQL or mutation of verified bundles.",
+      "x_acceptance_ids": ["DBK-001", "DBK-002", "DBK-003"],
+      "coverage": {"positive": "required", "negative": "required", "edge": "required", "fuzz": "required"}
+    },
+    {
+      "id": "REQ-PORT-0006",
+      "title": "Preserve canonical auditable reports",
+      "statement": "Auditable Reports MUST preserve Report Markdown and artifact.json, resolve the installed compiler on Windows, produce canonical paginated output, forward print settings, and publish atomically.",
+      "x_acceptance_ids": ["RPT-001", "RPT-002", "RPT-003"],
+      "coverage": {"positive": "required", "negative": "required", "edge": "required", "fuzz": "optional"}
+    },
+    {
+      "id": "REQ-PORT-0007",
+      "title": "Package safe standalone tools",
+      "statement": "Repo Manager, Crystal Report Inspector, and PDF Workbench MUST provide safe portable packages with capability inspection and accurate prerequisite boundaries.",
+      "x_acceptance_ids": ["TOOL-RM-001", "TOOL-CRI-001", "TOOL-PDF-001"],
+      "coverage": {"positive": "required", "negative": "required", "edge": "required", "fuzz": "optional"}
+    },
+    {
+      "id": "REQ-PORT-0008",
+      "title": "Verify extension releases",
+      "statement": "Every extension MUST verify branding, accessibility, tests, VSIX identity and contents, confidentiality, byte count, and SHA-256 before release.",
+      "x_acceptance_ids": ["BRAND-001", "REL-001", "REL-002"],
+      "coverage": {"positive": "required", "negative": "required", "edge": "required", "fuzz": "deferred"}
+    },
+    {
+      "id": "REQ-PORT-0009",
+      "title": "Install pinned components per user",
+      "statement": "Incursa Tooling Setup MUST be user-scoped, selectable, offline-capable, repairable, upgradeable, and consume only immutable verified component artifacts without deleting user-authored data.",
+      "x_acceptance_ids": ["INST-001", "INST-002", "INST-003", "INST-004", "INST-005"],
+      "coverage": {"positive": "required", "negative": "required", "edge": "required", "fuzz": "optional"}
+    },
+    {
+      "id": "REQ-PORT-0010",
+      "title": "Protect confidentiality and privacy",
+      "statement": "Public source and packages MUST contain no customer material or credentials and portfolio products MUST default to no telemetry, no upload, no background listener, and fail-closed mutation boundaries.",
+      "x_acceptance_ids": ["SEC-001", "SEC-002"],
+      "coverage": {"positive": "required", "negative": "required", "edge": "required", "fuzz": "required"}
+    }
+  ]
+}

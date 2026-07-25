@@ -1,0 +1,12 @@
+.github/**
+scripts/**
+test/**
+specs/**
+.gitattributes
+.gitignore
+package-lock.json
+node_modules/**
+images/*-master.svg
+images/brand-sheet.svg
+artifacts/**
+

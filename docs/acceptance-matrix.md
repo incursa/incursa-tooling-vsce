@@ -1,6 +1,6 @@
 # Acceptance Matrix
 
-Canonical SpecTrace requirements will assign stable IDs to these acceptance rows. Until that artifact is committed, the IDs below are the stable human contract.
+Canonical requirements live in `specs/requirements/incursa-tooling/SPEC-PORTFOLIO.json`. Its `x_acceptance_ids` extension fields map stable requirement IDs to the human-readable rows below.
 
 | ID | Requirement | Verification evidence | State |
 |---|---|---|---|
