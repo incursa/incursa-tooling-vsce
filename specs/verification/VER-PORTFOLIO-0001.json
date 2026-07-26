@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/incursa/spec-trace/main/model/model.schema.json",
+  "artifact_id": "VER-PORTFOLIO-0001",
+  "artifact_type": "verification",
+  "title": "Verify the Incursa tooling portfolio",
+  "domain": "incursa-tooling",
+  "status": "planned",
+  "owner": "incursa",
+  "verifies": [
+    "REQ-PORT-0001",
+    "REQ-PORT-0002",
+    "REQ-PORT-0003",
+    "REQ-PORT-0004",
+    "REQ-PORT-0005",
+    "REQ-PORT-0006",
+    "REQ-PORT-0007",
+    "REQ-PORT-0008",
+    "REQ-PORT-0009",
+    "REQ-PORT-0010"
+  ],
+  "scope": "All public extension repositories, standalone tool packages, extension-pack metadata, release workflows, and the unified per-user installer.",
+  "verification_method": "Run each repository's committed release gate and the Windows installation matrix, then reconcile the evidence with docs/acceptance-matrix.md.",
+  "procedure": [
+    "Run unit, integration, webview, extension-host, and browser-host tests applicable to each product.",
+    "Inspect browser bundles for forbidden desktop dependencies.",
+    "Inspect VSIX, ZIP, executable, and installer contents and identities.",
+    "Verify byte counts, SHA-256 values, component pins, and confidentiality scan results.",
+    "Exercise fresh install, selections, modify, repair, upgrade, uninstall, missing prerequisites, offline operation, and tamper rejection.",
+    "Record reproducible commands, commits, packages, workflow URLs, Marketplace status, and limitations in docs/portfolio-plan.md."
+  ],
+  "expected_result": "Every required acceptance row is complete with reproducible evidence, or an optional prerequisite-bound capability is accurately reported as limited without overstating coverage."
+}
+

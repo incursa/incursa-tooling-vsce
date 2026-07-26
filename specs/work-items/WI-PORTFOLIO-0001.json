@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/incursa/spec-trace/main/model/model.schema.json",
+  "artifact_id": "WI-PORTFOLIO-0001",
+  "artifact_type": "work_item",
+  "title": "Deliver the Incursa tooling portfolio",
+  "domain": "incursa-tooling",
+  "status": "in_progress",
+  "owner": "incursa",
+  "addresses": [
+    "REQ-PORT-0001",
+    "REQ-PORT-0002",
+    "REQ-PORT-0003",
+    "REQ-PORT-0004",
+    "REQ-PORT-0005",
+    "REQ-PORT-0006",
+    "REQ-PORT-0007",
+    "REQ-PORT-0008",
+    "REQ-PORT-0009",
+    "REQ-PORT-0010"
+  ],
+  "design_links": [],
+  "verification_links": ["VER-PORTFOLIO-0001"],
+  "summary": "Implement, verify, package, and release the approved Incursa VS Code extensions, standalone Windows tools, extension pack, and unified installer.",
+  "planned_changes": "Work through the repository-owned milestones in docs/portfolio-plan.md while preserving protected user worktrees and source boundaries.",
+  "verification_plan": "Complete the reproducible evidence mapped in docs/acceptance-matrix.md and record package hashes, commit SHAs, workflow URLs, and external limitations."
+}
+

@@ -2,21 +2,22 @@
 
 The portfolio is intentionally multi-repository. Runtime code remains owned by its product repository.
 
-| Product or source | Repository | Delivery boundary | Baseline observed 2026-07-24 |
+| Product or source | Repository | Delivery boundary | Evidence baseline |
 |---|---|---|---|
 | SpecTrace for VS Code | `incursa/spec-trace-vsce` | Web core with optional desktop entry | `main` at `b782955`, clean, version `1.1.2` |
 | CSV Contract Workbench | `incursa/csv-contract-vsce` | Web core plus desktop large-file path | `main` at `3a1ca5a`, clean, version `0.5.0` |
 | Auditable Reports for VS Code | `incursa/auditable-reports-vsce` | Windows desktop extension | `main` at `42171bc`, clean, version `0.1.2` |
-| Database Knowledge Workbench | `incursa/database-knowledge-vsce` | New Windows-first extension | Empty public repository cloned locally |
+| Auditable Reports bundle compiler | `incursa/auditable-reports` | Canonical artifact, shared portable renderer, Chart.js, Paged.js, and PDF boundary | public Apache-2.0 `main` at `3f986ff`; full local gate and public CI pass |
+| Database Knowledge Workbench | `incursa/database-knowledge-vsce` | Windows-first extension plus bounded web subset | `main` initialized; feature commit `799e1d1`; draft PR `#1` |
 | Incursa Tooling | `incursa/incursa-tooling-vsce` | Metadata-only extension pack and portfolio control | Empty public repository cloned locally |
 | Incursa Tooling Installer | `incursa/incursa-tooling-installer` | User-scoped Inno Setup aggregator | Empty public repository cloned locally |
 | Workbench | `incursa/workbench` | Optional structured desktop helper | `main` at `9614701`; unrelated deletion present |
 | SpecTrace standard | `incursa/spec-trace` | Canonical artifact model and templates | `main` at `37a1f73`; unrelated changes present |
-| Database Tools | `incursa/database-tools` | Host-independent knowledge/query/overlay/workspace/operations engines | `main` at `8d5fdaf`, ahead of remote; unrelated files present |
-| Database Tools content | `incursa/database-tools-content` | Approved generic content | `main` at `6f89ca4`, ahead of remote |
-| Incursa Repo Manager | `incursa/repomanager` | Standalone .NET application | `main` at `010904d`; unrelated vendor-asset deletions present |
-| Crystal Report Inspector | local `rpt-to-xml-modern` | Standalone Windows tool | `main` at `1be792e`; no remote configured |
-| PDF Workbench | local `pdfxchange-tools-dotnet` | Standalone Windows wrapper | uncommitted initial repository; no remote configured |
+| Database Tools | `incursa/database-tools` | Host-independent knowledge/query/overlay/workspace/operations engines | clean feature commit `e242dd5`; draft PR `#2` |
+| Database Tools content | `incursa/database-tools-content` | Approved generic content | clean feature commit `6f89ca4`; draft PR `#1` |
+| Incursa Repo Manager | `incursa/repomanager` | Standalone .NET application | clean linked-worktree feature commit `4a76d63`, draft PR `#1`; original `main` worktree vendor-asset deletions remain protected |
+| Crystal Report Inspector | `incursa/rpt-to-xml-modern` | Standalone Windows tool | sanitized public Apache-2.0 `main` at `df896b6`; CI passes; compiled vendor samples excluded |
+| PDF Workbench | `incursa/pdfxchange-tools-dotnet` | Standalone Windows application and CLI | public Apache-2.0 draft PR `#1` at `e0df004`; 25 tests, 12 artifacts, 138 requirements, packaged doctor/preview smoke, and verified portable ZIP |
 | Incursa UI Kit | `incursa/ui-kit` | Canonical code design tokens and components | `main` at `68e2ad4`; substantial unrelated design-system work present |
 | PowerShell CSV behavior | local `powershell-tools` | Parity/reference behavior only | not a Git repository at workspace root |
 

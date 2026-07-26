@@ -1,39 +1,39 @@
 # Acceptance Matrix
 
-Canonical SpecTrace requirements will assign stable IDs to these acceptance rows. Until that artifact is committed, the IDs below are the stable human contract.
+Canonical requirements live in `specs/requirements/incursa-tooling/SPEC-PORTFOLIO.json`. Its `x_acceptance_ids` extension fields map stable requirement IDs to the human-readable rows below.
 
 | ID | Requirement | Verification evidence | State |
 |---|---|---|---|
-| PORT-001 | Portfolio documents and capability matrix match implemented products | Documentation check plus package-manifest comparison | In progress |
-| PORT-002 | New public repositories are initialized, pushed, and have working CI/release workflows | GitHub branch/workflow URLs and successful runs | Pending |
-| WEB-STR-001 | SpecTrace important workflows pass in the VS Code web-extension host | Web-host test command and log | Pending |
-| WEB-CSV-001 | CSV authoring and semantic comparison pass in the VS Code web-extension host | Web-host tests and deterministic fixtures | Pending |
-| WEB-BOUND-001 | Browser bundles contain no Node, native, Python, .NET, subprocess, or direct filesystem dependency | Bundle metafile/import inspection | Pending |
-| CSV-SEM-001 | Full-row multiset and keyed comparison are deterministic and row-order independent | Unit/parity fixtures | Pending |
-| CSV-SEM-002 | Duplicate keys are detected without arbitrary pairing | Unit/parity fixtures | Pending |
-| CSV-SEM-003 | Normalization is opt-in and preserves raw identifiers/leading zeroes | Unit/parity fixtures | Pending |
-| CSV-DESK-001 | Desktop large-file comparison streams and checks uniqueness exactly with spill-to-disk | Integration/performance fixtures | Pending |
-| STR-WB-001 | Workbench integration is optional, trust-gated, structured, cancellable, timed, and bounded | Contract and extension-host tests | Pending |
-| DBK-001 | Database Knowledge Workbench verifies manifest, containment, byte counts, sizes, and SHA-256 | Sanitized-bundle tests | Pending |
-| DBK-002 | Database Knowledge Workbench streams/indexes/searches and inspects supported knowledge layers | Integration and UI tests | Pending |
-| DBK-003 | Candidate edits do not mutate verified bundles and no private overlay ships | Mutation/confidentiality tests | Pending |
-| RPT-001 | Installed Auditable Reports VSIX resolves the bundled compiler on Windows | Installed-extension regression test | Pending |
-| RPT-002 | Canonical `artifact.json`, paginated HTML, and PDF validation remain aligned | Compiler/fixture/PDF tests | Pending |
-| RPT-003 | Ordinary bundle commands forward print settings and replace outputs atomically | Regression tests | Pending |
-| TOOL-RM-001 | Repo Manager portable release works without AI and previews/confirms Git changes | Package, doctor, and integration tests | Pending |
-| TOOL-CRI-001 | Crystal Report Inspector extracts/browses/compares and reports runtime bitness accurately | Unit tests plus runtime-present/absent evidence | Pending |
-| TOOL-PDF-001 | PDF Workbench detects licensed capabilities, previews safe non-overwriting commands, and packages portably | Unit/integration/package evidence | Pending |
-| PACK-001 | Incursa Tooling remains metadata-only and lists the four member extensions | VSIX content and manifest test | Pending |
-| BRAND-001 | Every extension has verified icons, brand sheet, real screenshots, accessible UI, and Marketplace metadata | Asset verification and accessibility checklist | Pending |
-| REL-001 | Every extension produces an inspected VSIX with SHA-256 | Release-check output | Pending |
-| REL-002 | Release workflows fail clearly without `VSCE_PAT` and publish only through the secret-backed environment | Workflow tests/review | Pending |
-| INST-001 | Installer is per-user, non-elevating, selectable, offline, and consumes only pinned verified artifacts | Inno script tests and staged manifest | Pending |
-| INST-002 | Fresh/minimum/typical/full, modify, repair, upgrade, and uninstall preserve user data | Windows test matrix | Pending |
-| INST-003 | Missing VS Code/SSMS/SAP/PDF-XChange degrades clearly without failing unrelated selections | Windows test matrix | Pending |
-| INST-004 | Dirty, missing, unexpected, mutable, or hash-mismatched inputs are rejected | Builder negative tests | Pending |
-| INST-005 | Installed component manifest and setup checksum are generated | Package inspection | Pending |
-| SEC-001 | Public diffs and packages contain no confidential material or credentials | Confidentiality scan | Pending |
-| SEC-002 | No telemetry/upload/background listener is present | Source/package inspection | Pending |
+| PORT-001 | Portfolio documents and capability matrix match implemented products | Documentation plus the validated manifest on installer draft PR `#1` | Complete |
+| PORT-002 | New public repositories are initialized, pushed, and have working CI/release workflows | Pushed draft-PR branches, green CI, and five-workflow policy verification | Complete |
+| WEB-STR-001 | SpecTrace important workflows pass in the VS Code web-extension host | 33 web-host tests plus Chrome smoke at `1027fc3` | Complete |
+| WEB-CSV-001 | CSV authoring and semantic comparison pass in the VS Code web-extension host | Real web-host release gate plus eight parity fixtures at `06799a7` | Complete |
+| WEB-BOUND-001 | Browser bundles contain no Node, native, Python, .NET, subprocess, or direct filesystem dependency | Production bundle/import inspections in SpecTrace, CSV, and Database Knowledge | Complete |
+| CSV-SEM-001 | Full-row multiset and keyed comparison are deterministic and row-order independent | Node and PowerShell parity fixtures at `06799a7` | Complete |
+| CSV-SEM-002 | Duplicate keys are detected without arbitrary pairing | Duplicate fixtures and redacted diagnostics at `06799a7` | Complete |
+| CSV-SEM-003 | Normalization is opt-in and preserves raw identifiers/leading zeroes | Normalization/identifier fixtures at `06799a7` | Complete |
+| CSV-DESK-001 | Desktop large-file comparison streams and checks uniqueness exactly with spill-to-disk | 128-partition exact spill implementation and tests at `06799a7` | Complete |
+| STR-WB-001 | Workbench integration is optional, trust-gated, structured, cancellable, timed, and bounded | Contract tests at `1027fc3`; ARM64 helper unavailable on host | Complete with host limitation |
+| DBK-001 | Database Knowledge Workbench verifies manifest, containment, byte counts, sizes, and SHA-256 | Sanitized/security tests at `799e1d1` | Complete |
+| DBK-002 | Database Knowledge Workbench streams/indexes/searches and inspects supported knowledge layers | Unit, extension-host, and visual/interaction QA at `799e1d1` | Complete |
+| DBK-003 | Candidate edits do not mutate verified bundles and no private overlay ships | Mutation tests, unbiased CSP nonce tests, and 17-entry package inspection at `799e1d1` | Complete |
+| RPT-001 | Installed Auditable Reports VSIX resolves the bundled compiler on Windows | Real Windows extension-host preview plus path regression at `f064f49` | Complete |
+| RPT-002 | Canonical `artifact.json`, paginated HTML, and PDF validation remain aligned | Full sibling gate at public head `3f986ff` (renderer fix `ee94996`): desktop/mobile verification, Chart.js, Paged.js, paginated HTML, and PDF pass | Complete |
+| RPT-003 | Ordinary bundle commands forward print settings and replace outputs atomically | Chart-bearing and chartless end-to-end bundles pass through the shared renderer adapter; public CI is green at `3f986ff` | Complete |
+| TOOL-RM-001 | Repo Manager portable release works without AI and previews/confirms Git changes | 46 tests, deterministic ZIP, packaged doctor, no-AI browser QA, stale-state guard, and draft PR `incursa/repomanager#1` at `4a76d63` | Complete |
+| TOOL-CRI-001 | Crystal Report Inspector extracts/browses/compares and reports runtime bitness accurately | Public Apache-2.0 source at `df896b6`; 14 tests, safe ZIP, XML smoke, absent-runtime doctor, and zero redistributed `.rpt` samples | Complete with SAP/runtime limit |
+| TOOL-PDF-001 | PDF Workbench detects licensed capabilities, previews safe non-overwriting commands, and packages portably | Draft PR `incursa/pdfxchange-tools-dotnet#1` at `e0df004`; polished WPF UI, preview-first CLI, 25 tests, 12 valid artifacts, 138 requirements, and verified ZIP SHA-256 `78a9f3a3afafd8bdfae5bfce2307b376afc3c87b6400c58e1b305289655ad97d` | Complete with licensed-host limit |
+| PACK-001 | Incursa Tooling remains metadata-only and lists the four member extensions | `npm run release:check`; `artifacts/VSIX-CONTENTS.json`; package inspection | Complete |
+| BRAND-001 | Every extension has verified icons, brand sheet, real screenshots, accessible UI, and Marketplace metadata | Asset gates plus SpecTrace real traceability-tree screenshot at `1027fc3` | Complete |
+| REL-001 | Every extension produces an inspected VSIX with SHA-256 | Five-package table in `docs/portfolio-plan.md` | Complete |
+| REL-002 | Release workflows fail clearly without `VSCE_PAT` and publish only through the secret-backed environment | `scripts/Test-PortfolioReleasePolicy.ps1` verifies five protected exact-package workflows | Complete |
+| INST-001 | Installer is per-user, non-elevating, selectable, offline, and consumes only pinned verified artifacts | Seven-component revision 4 on installer draft PR `#1`, including pinned Repo Manager and the generic-only Database Tools nested installer | Complete for staged portfolio |
+| INST-002 | Fresh/minimum/typical/full, modify, repair, upgrade, and uninstall preserve user data | Minimum/typical/full, modify, repair, r3→r4 upgrade, non-ASCII paths, locked-file recovery, standalone Database Tools uninstall, and sentinel preservation pass | Complete for staged portfolio |
+| INST-003 | Missing VS Code/SSMS/SAP/PDF-XChange degrades clearly without failing unrelated selections | Missing VS Code fallback and missing SSMS staged-installer behavior pass; SAP/PDF wrappers remain precisely documented companion blockers | Complete for staged portfolio; companion blockers documented |
+| INST-004 | Dirty, missing, unexpected, mutable, or hash-mismatched inputs are rejected | `scripts/Test-Repository.ps1`; dirty, unexpected, byte, and same-size hash tamper tests | Complete |
+| INST-005 | Installed component manifest and setup checksum are generated | Revision 4 installed manifest and checksum sidecar recorded in the installer repository test matrix and draft PR | Complete |
+| SEC-001 | Public diffs and packages contain no confidential material or credentials | Package inspections and repository confidentiality scans | Complete for packaged artifacts |
+| SEC-002 | No telemetry/upload/background listener is present | Source/package inspections across five extensions and installer | Complete for packaged artifacts |
 
 ## Completion rule
 
