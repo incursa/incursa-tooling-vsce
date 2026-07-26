@@ -10,13 +10,15 @@ const temporaryPath = `${vsixPath}.normalized`;
 const source = new AdmZip(vsixPath);
 const normalized = new AdmZip();
 const fixedTimestamp = new Date(Date.UTC(2000, 0, 1, 0, 0, 0));
+const directoryMode = 0o755;
+const fileMode = 0o644;
 
 for (const entry of source.getEntries().sort((left, right) => left.entryName.localeCompare(right.entryName))) {
   normalized.addFile(
     entry.entryName,
     entry.isDirectory ? Buffer.alloc(0) : entry.getData(),
     entry.comment,
-    entry.attr
+    entry.isDirectory ? directoryMode : fileMode
   );
   normalized.getEntry(entry.entryName).header.time = fixedTimestamp;
 }

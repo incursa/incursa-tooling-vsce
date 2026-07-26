@@ -13,6 +13,13 @@ if (!manifestEntry) {
   throw new Error("VSIX is missing extension/package.json");
 }
 
+const manifestMode = (manifestEntry.attr >>> 16) & 0o777;
+if (manifestMode !== 0o644) {
+  throw new Error(
+    `VSIX extension/package.json must be writable by its owner (expected mode 0644, found 0${manifestMode.toString(8)})`
+  );
+}
+
 const manifest = JSON.parse(manifestEntry.getData().toString("utf8"));
 if (manifest.publisher !== "incursa" || manifest.name !== "incursa-tooling-vsce") {
   throw new Error("VSIX identity does not match incursa.incursa-tooling-vsce");
@@ -28,6 +35,7 @@ const report = {
   identity: `${manifest.publisher}.${manifest.name}`,
   version: manifest.version,
   extensionPack: manifest.extensionPack,
+  manifestMode: `0${manifestMode.toString(8)}`,
   entryCount: entries.length,
   entries
 };
@@ -36,4 +44,3 @@ await import("node:fs/promises").then(({ writeFile }) =>
 );
 
 console.log(`Inspected ${report.identity}@${report.version} (${entries.length} entries).`);
-

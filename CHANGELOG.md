@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- Preserve writable file permissions in normalized VSIX packages so VS Code can install the extension pack.
+
 ## 0.1.0
 
 - Establish the Incursa Tooling metadata-only extension pack.

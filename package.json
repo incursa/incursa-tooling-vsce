@@ -2,7 +2,7 @@
   "name": "incursa-tooling-vsce",
   "displayName": "Incursa Tooling",
   "description": "Install the Incursa portfolio for specifications, CSV contracts, auditable reports, and offline database knowledge.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "incursa",
   "license": "SEE LICENSE IN LICENSE",
   "engines": {
