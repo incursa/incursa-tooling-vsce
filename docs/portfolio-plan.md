@@ -30,7 +30,7 @@ Evidence links are repository-relative until a public URL or release artifact ex
 | 3. SpecTrace and Workbench | Complete with host limitation; release pending | Commit `1027fc3`; 33 web-host tests, optional desktop contract, and a real traceability-tree screenshot; ARM64 helper could not execute on this host; PR `incursa/spec-trace-vsce#2` |
 | 4. Database Knowledge Workbench | Complete; release pending | Commit `799e1d1`; 17 security/parity tests, unbiased CSP nonces, dual bundles, extension-host/visual QA, and protected exact-package publication; PR `incursa/database-knowledge-vsce#1` |
 | 5. Auditable Reports | Complete; release pending | Extension commit `f064f49`; public bundle repo `3f986ff` with renderer fix `ee94996`; installed-host regression, desktop/mobile verification, paginated HTML, and PDF pass |
-| 6. Standalone Windows tools | Repo Manager and Crystal complete; PDF UI pending | Repo Manager draft PR `#1`; sanitized public Crystal source `df896b6`; public PDF wrapper/package source `b3bb32e` with UI still outstanding |
+| 6. Standalone Windows tools | Complete with licensed-host limits; release pending | Repo Manager draft PR `#1`; sanitized public Crystal source `df896b6`; PDF Workbench draft PR `incursa/pdfxchange-tools-dotnet#1` at `c56ac8e` |
 | 7. Incursa Tooling pack | Complete; release pending | Verified metadata-only 17-entry VSIX; portfolio release-policy verifier covers all five extensions; draft PR `incursa/incursa-tooling-vsce#1` |
 | 8. Unified installer | Seven-component offline portfolio complete; companion blockers recorded | Lifecycle-tested revision 4 with Repo Manager and generic-only Database Tools; exact pins/checksum in installer docs and draft PR `incursa/incursa-tooling-installer#1` |
 | 9. Release handoff | Ready with limitations | Nine draft PRs plus three public companion repositories, five VSIXes, unified installer, Database Tools installer, Repo Manager ZIP, Crystal ZIP, Figma reference, and exact remaining external gates recorded |
@@ -140,10 +140,12 @@ Evidence links are repository-relative until a public URL or release artifact ex
   public history excludes all 44 compiled vendor `.rpt` samples and generated
   release artifacts while retaining Apache-2.0 licensing and the inherited MIT notice.
 - Repo Manager was implemented in the clean linked worktree `repomanager-portfolio`; the original worktree's 56 tracked vendor-asset deletions remain untouched.
-- PDF wrapper source is public at `incursa/pdfxchange-tools-dotnet` commit
-  `b3bb32e`. Build, 15 tests, 126-requirement validation, NuGet packaging CI,
-  CodeQL, and the licensed-product boundary pass. The polished standalone UI
-  remains unfinished.
+- PDF Workbench source is public and Apache-2.0 at
+  `incursa/pdfxchange-tools-dotnet` draft PR `#1`, commit `c56ac8e`. The polished
+  WPF app, preview-first CLI, six curated workflows, safe unique-output plans,
+  capability detection, and self-contained portable packaging are complete.
+  Local verification passes 25 tests and validates 12 artifacts with 138
+  requirements. Licensed live PDF processing remains an external host gate.
 
 ### 2026-07-25 — renderer repair and Database Tools publication
 
@@ -156,7 +158,16 @@ Evidence links are repository-relative until a public URL or release artifact ex
 
 - `incursa/auditable-reports` is public and Apache-2.0 at `3f986ff`. The complete local browser/PDF gate passes, and GitHub CI plus CodeQL are green.
 - `incursa/rpt-to-xml-modern` is public and Apache-2.0 at sanitized commit `df896b6`. The public tree contains zero `.rpt` samples and zero generated artifacts, preserves the original MIT attribution, and passes 14 tests plus XML inspection/comparison verification.
-- `incursa/pdfxchange-tools-dotnet` is public and Apache-2.0 at `b3bb32e`. It contains no PDF-XChange binaries, manuals, saved settings, OCR engines, or license keys; CI and CodeQL are green.
+- `incursa/pdfxchange-tools-dotnet` is public and Apache-2.0. Draft PR `#1` at `c56ac8e` contains no PDF-XChange binaries, manuals, saved settings, OCR engines, license keys, or customer PDFs.
+
+### 2026-07-26 — PDF Workbench polish
+
+- Added the standalone WPF application and companion CLI with six curated workflows: OCR, text extraction, split, merge, image export, and report preparation.
+- Execution is preview-first, output collisions use unique names, desktop runs require final confirmation, and cancellation terminates the external process tree.
+- Capability detection handles an absent PDF-XChange installation without failing unrelated inspection or packaging workflows.
+- Repository verification passes with 25 tests, zero build warnings, 12 valid SpecTrace artifacts, and 138 traced requirements.
+- Portable ZIP: `PDFWorkbench-0.2.0-win-x64.zip`; 93,714,863 bytes; SHA-256 `78a9f3a3afafd8bdfae5bfce2307b376afc3c87b6400c58e1b305289655ad97d`.
+- Draft PR: `https://github.com/incursa/pdfxchange-tools-dotnet/pull/1`; commit `c56ac8e2b6468fd0c02653f323d0fd51db6226af`.
 
 ## Required evidence for each product milestone
 
