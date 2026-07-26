@@ -30,7 +30,7 @@ Evidence links are repository-relative until a public URL or release artifact ex
 | 3. SpecTrace and Workbench | Complete with host limitation; release pending | Commit `1027fc3`; 33 web-host tests, optional desktop contract, and a real traceability-tree screenshot; ARM64 helper could not execute on this host; PR `incursa/spec-trace-vsce#2` |
 | 4. Database Knowledge Workbench | Complete; release pending | Commit `799e1d1`; 17 security/parity tests, unbiased CSP nonces, dual bundles, extension-host/visual QA, and protected exact-package publication; PR `incursa/database-knowledge-vsce#1` |
 | 5. Auditable Reports | Complete; release pending | Extension commit `f064f49`; public bundle repo `3f986ff` with renderer fix `ee94996`; installed-host regression, desktop/mobile verification, paginated HTML, and PDF pass |
-| 6. Standalone Windows tools | Complete with licensed-host limits; release pending | Repo Manager draft PR `#1`; sanitized public Crystal source `df896b6`; PDF Workbench draft PR `incursa/pdfxchange-tools-dotnet#1` at `c56ac8e` |
+| 6. Standalone Windows tools | Complete with licensed-host limits; release pending | Repo Manager draft PR `#1`; sanitized public Crystal source `df896b6`; PDF Workbench draft PR `incursa/pdfxchange-tools-dotnet#1` at `e0df004` |
 | 7. Incursa Tooling pack | Complete; release pending | Verified metadata-only 17-entry VSIX; portfolio release-policy verifier covers all five extensions; draft PR `incursa/incursa-tooling-vsce#1` |
 | 8. Unified installer | Seven-component offline portfolio complete; companion blockers recorded | Lifecycle-tested revision 4 with Repo Manager and generic-only Database Tools; exact pins/checksum in installer docs and draft PR `incursa/incursa-tooling-installer#1` |
 | 9. Release handoff | Ready with limitations | Nine draft PRs plus three public companion repositories, five VSIXes, unified installer, Database Tools installer, Repo Manager ZIP, Crystal ZIP, Figma reference, and exact remaining external gates recorded |
@@ -141,7 +141,7 @@ Evidence links are repository-relative until a public URL or release artifact ex
   release artifacts while retaining Apache-2.0 licensing and the inherited MIT notice.
 - Repo Manager was implemented in the clean linked worktree `repomanager-portfolio`; the original worktree's 56 tracked vendor-asset deletions remain untouched.
 - PDF Workbench source is public and Apache-2.0 at
-  `incursa/pdfxchange-tools-dotnet` draft PR `#1`, commit `c56ac8e`. The polished
+  `incursa/pdfxchange-tools-dotnet` draft PR `#1`, commit `e0df004`. The polished
   WPF app, preview-first CLI, six curated workflows, safe unique-output plans,
   capability detection, and self-contained portable packaging are complete.
   Local verification passes 25 tests and validates 12 artifacts with 138
@@ -158,7 +158,7 @@ Evidence links are repository-relative until a public URL or release artifact ex
 
 - `incursa/auditable-reports` is public and Apache-2.0 at `3f986ff`. The complete local browser/PDF gate passes, and GitHub CI plus CodeQL are green.
 - `incursa/rpt-to-xml-modern` is public and Apache-2.0 at sanitized commit `df896b6`. The public tree contains zero `.rpt` samples and zero generated artifacts, preserves the original MIT attribution, and passes 14 tests plus XML inspection/comparison verification.
-- `incursa/pdfxchange-tools-dotnet` is public and Apache-2.0. Draft PR `#1` at `c56ac8e` contains no PDF-XChange binaries, manuals, saved settings, OCR engines, license keys, or customer PDFs.
+- `incursa/pdfxchange-tools-dotnet` is public and Apache-2.0. Draft PR `#1` at `e0df004` contains no PDF-XChange binaries, manuals, saved settings, OCR engines, license keys, or customer PDFs.
 
 ### 2026-07-26 — PDF Workbench polish
 
@@ -167,7 +167,7 @@ Evidence links are repository-relative until a public URL or release artifact ex
 - Capability detection handles an absent PDF-XChange installation without failing unrelated inspection or packaging workflows.
 - Repository verification passes with 25 tests, zero build warnings, 12 valid SpecTrace artifacts, and 138 traced requirements.
 - Portable ZIP: `PDFWorkbench-0.2.0-win-x64.zip`; 93,714,863 bytes; SHA-256 `78a9f3a3afafd8bdfae5bfce2307b376afc3c87b6400c58e1b305289655ad97d`.
-- Draft PR: `https://github.com/incursa/pdfxchange-tools-dotnet/pull/1`; commit `c56ac8e2b6468fd0c02653f323d0fd51db6226af`.
+- Draft PR: `https://github.com/incursa/pdfxchange-tools-dotnet/pull/1`; commit `e0df0048f75b3e6e73bc2b5e63388b4fbe217d2e`.
 
 ## Required evidence for each product milestone
 

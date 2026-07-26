@@ -17,7 +17,7 @@ The portfolio is intentionally multi-repository. Runtime code remains owned by i
 | Database Tools content | `incursa/database-tools-content` | Approved generic content | clean feature commit `6f89ca4`; draft PR `#1` |
 | Incursa Repo Manager | `incursa/repomanager` | Standalone .NET application | clean linked-worktree feature commit `4a76d63`, draft PR `#1`; original `main` worktree vendor-asset deletions remain protected |
 | Crystal Report Inspector | `incursa/rpt-to-xml-modern` | Standalone Windows tool | sanitized public Apache-2.0 `main` at `df896b6`; CI passes; compiled vendor samples excluded |
-| PDF Workbench | `incursa/pdfxchange-tools-dotnet` | Standalone Windows application and CLI | public Apache-2.0 draft PR `#1` at `c56ac8e`; 25 tests, 12 artifacts, 138 requirements, packaged doctor/preview smoke, and verified portable ZIP |
+| PDF Workbench | `incursa/pdfxchange-tools-dotnet` | Standalone Windows application and CLI | public Apache-2.0 draft PR `#1` at `e0df004`; 25 tests, 12 artifacts, 138 requirements, packaged doctor/preview smoke, and verified portable ZIP |
 | Incursa UI Kit | `incursa/ui-kit` | Canonical code design tokens and components | `main` at `68e2ad4`; substantial unrelated design-system work present |
 | PowerShell CSV behavior | local `powershell-tools` | Parity/reference behavior only | not a Git repository at workspace root |
 
