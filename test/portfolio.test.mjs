@@ -21,15 +21,16 @@ test("extension pack contains the four approved products exactly once", () => {
   assert.equal(new Set(pkg.extensionPack).size, 4);
 });
 
-test("portfolio links are HTTPS and repository-scoped", async () => {
+test("portfolio links are HTTPS and publicly resolvable", async () => {
   const readme = await readFile(new URL("../README.md", import.meta.url), "utf8");
   assert.doesNotMatch(readme, /http:\/\/|file:\/\//i);
   for (const repo of [
     "spec-trace-vsce",
     "csv-contract-vsce",
-    "auditable-reports-vsce",
-    "database-knowledge-vsce"
+    "auditable-reports-vsce"
   ]) {
     assert.match(readme, new RegExp(`https://github\\.com/incursa/${repo}`));
   }
+  assert.match(readme, /https:\/\/marketplace\.visualstudio\.com\/items\?itemName=incursa\.database-knowledge-workbench/);
+  assert.doesNotMatch(readme, /database-knowledge-vsce/);
 });
