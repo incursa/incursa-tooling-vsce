@@ -11,7 +11,7 @@ Incursa Tooling is a lightweight extension pack for specification traceability, 
 | SpecTrace for VS Code | Yes | Yes | [incursa/spec-trace-vsce](https://github.com/incursa/spec-trace-vsce) |
 | CSV Contract Workbench | Yes | Yes | [incursa/csv-contract-vsce](https://github.com/incursa/csv-contract-vsce) |
 | Auditable Reports for VS Code | No web claim | Windows | [incursa/auditable-reports-vsce](https://github.com/incursa/auditable-reports-vsce) |
-| Database Knowledge Workbench | Bounded bundle subset | Windows-first | [incursa/database-knowledge-vsce](https://github.com/incursa/database-knowledge-vsce) |
+| Database Knowledge Workbench | Bounded bundle subset | Windows-first | [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=incursa.database-knowledge-workbench) |
 
 See the tracked [capability matrix](docs/capability-matrix.md) for exact boundaries and the [security and privacy model](docs/security-and-privacy.md) for portfolio defaults.
 
@@ -26,7 +26,7 @@ The extension pack has no activation code, telemetry, network behavior, file acc
 ## Support and source
 
 - Source and issues: [github.com/incursa/incursa-tooling-vsce](https://github.com/incursa/incursa-tooling-vsce)
-- Portfolio plan: [docs/portfolio-plan.md](docs/portfolio-plan.md)
+- Portfolio policy: [docs/portfolio-plan.md](docs/portfolio-plan.md)
 - Release runbook: [docs/release-and-marketplace.md](docs/release-and-marketplace.md)
 
 Incursa names and artwork are governed separately from the source-code license. See [TRADEMARKS.md](TRADEMARKS.md) and [BRAND-ASSET-LICENSE.md](BRAND-ASSET-LICENSE.md).

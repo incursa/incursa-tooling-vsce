@@ -11,3 +11,5 @@ npm run release:check
 
 Do not add customer material, credentials, private overlays, database snapshots, or confidential screenshots.
 
+Keep public durable documentation free of private-repository details and branch, commit, deployment, point-in-time validation, test-count, package-count, exact-latest-version, or unfinished-work status. Put release history in `CHANGELOG.md` and active delivery tracking in issues or pull requests.
+
